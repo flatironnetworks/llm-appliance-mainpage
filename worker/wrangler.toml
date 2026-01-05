@@ -5,12 +5,18 @@ name = "llm-appliance-form-handler"
 main = "worker.js"
 compatibility_date = "2024-01-01"
 
-# Environment variables (set these in Cloudflare Dashboard or via wrangler secret put)
+# Environment variables (set these using: wrangler secret put VARIABLE_NAME)
+# 
+# Required:
 # TURNSTILE_SECRET_KEY - Your Cloudflare Turnstile secret key
-# SENDGRID_API_KEY - Your SendGrid API key (optional, for email notifications)
-# NOTIFICATION_EMAIL - Email address to receive form submissions (optional)
-# FROM_EMAIL - Email address to send from (optional)
-# WEBHOOK_URL - Webhook URL for notifications (optional)
+#
+# Email Configuration (SendGrid - recommended):
+# SENDGRID_API_KEY - Your SendGrid API key (get from https://sendgrid.com)
+# NOTIFICATION_EMAIL - Email address to receive form submissions (e.g., sales@yourdomain.com)
+# FROM_EMAIL - Email address to send from (must be verified in SendGrid, e.g., noreply@yourdomain.com)
+#
+# Optional:
+# WEBHOOK_URL - Webhook URL for notifications (Slack, Discord, etc.)
 
 # D1 Database binding (optional, if using database storage)
 # [[d1_databases]]
