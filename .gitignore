@@ -29,6 +29,7 @@ build/
 wrangler.toml.local
 .wrangler.toml
 *.log
+worker.js
 
 # Cloudflare configuration (keep this for Pages)
 # wrangler.toml is needed for Pages deployment
