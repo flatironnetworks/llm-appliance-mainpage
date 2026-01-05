@@ -87,9 +87,8 @@ if (contactForm) {
         data['cf-turnstile-response'] = turnstileToken;
         
         // Send form data to Cloudflare Worker
-        // TODO: Replace with your actual Worker URL after deployment
-        // Get this from: wrangler deploy output or Cloudflare Dashboard
-        const workerUrl = 'https://llm-appliance-mainpage.rob-fauls-holdings-llc.workers.dev';
+        // Worker URL - using custom domain
+        const workerUrl = 'https://form.llmappliance.com';
         
         if (workerUrl.includes('YOUR_WORKER_URL')) {
             alert('Worker URL not configured. Please update script.js with your Worker URL.');
