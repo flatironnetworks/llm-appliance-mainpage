@@ -98,7 +98,7 @@ if (contactForm) {
                 return;
             }
             
-            const response = await fetch(`${workerUrl}/contact`, {
+            const response = await fetch(workerUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -119,11 +119,15 @@ if (contactForm) {
             } else {
                 const errorData = await response.json().catch(() => ({ error: 'Unknown error' }));
                 console.error('Form submission error:', errorData);
+                console.error('Response status:', response.status);
+                console.error('Response statusText:', response.statusText);
                 alert('There was an error submitting the form. Please try again or contact us directly.');
             }
         } catch (error) {
             console.error('Network error:', error);
-            alert('There was a network error. Please check your connection and try again.');
+            console.error('Error details:', error.message);
+            console.error('Worker URL:', workerUrl);
+            alert('There was a network error. Please check your connection and try again. Check browser console (F12) for details.');
         }
     });
 }
