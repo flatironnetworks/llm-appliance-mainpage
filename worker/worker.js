@@ -73,7 +73,7 @@ export default {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            secret: env.TURNSTILE_SECRET_KEY,
+            secret: env.0x4AAAAAACKjqe4iX84DOj2eFDjLLagUGfg,
             response: data['cf-turnstile-response'],
             remoteip: request.headers.get('CF-Connecting-IP') || ''
           })
