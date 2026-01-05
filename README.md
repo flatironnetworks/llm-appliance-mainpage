@@ -43,8 +43,10 @@ This is a static website built for Cloudflare Pages deployment. The site is desi
 2. **Build Settings**
    - **Framework preset**: None (or Static Site)
    - **Build command**: (leave empty - no build needed)
-   - **Build output directory**: `/` (root directory)
+   - **Build output directory**: `.` (current directory/root)
    - **Root directory**: `/` (if repository is at root)
+   
+   **Note**: The `wrangler.toml` file is included to ensure Cloudflare Pages treats this as a static site deployment, not a Worker.
 
 3. **Deploy**
    - Cloudflare will automatically deploy on every commit to your main branch

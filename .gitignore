@@ -23,3 +23,6 @@ dist/
 build/
 *.min.js
 *.min.css
+
+# Cloudflare configuration (keep this for Pages)
+# wrangler.toml is needed for Pages deployment
