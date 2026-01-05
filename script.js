@@ -87,8 +87,8 @@ if (contactForm) {
         data['cf-turnstile-response'] = turnstileToken;
         
         // Send form data to Cloudflare Worker
-        // Worker URL - using custom domain
-        const workerUrl = 'https://form.llmappliance.com';
+        // Worker URL - using workers.dev (custom domain needs dashboard setup)
+        const workerUrl = 'https://llm-appliance-form-handler.rob-fauls-holdings-llc.workers.dev';
         
         if (workerUrl.includes('YOUR_WORKER_URL')) {
             alert('Worker URL not configured. Please update script.js with your Worker URL.');
