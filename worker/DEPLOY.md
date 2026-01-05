@@ -3,32 +3,60 @@
 ## Option 1: Using Wrangler CLI (Recommended)
 
 ### Prerequisites
-1. Install Node.js (v18 or later)
-2. Install Wrangler CLI:
-   ```bash
+1. **Install Node.js** (v18 or later)
+   - Download from https://nodejs.org/
+   - Choose the Windows Installer (.msi)
+   - Verify installation: Open PowerShell/Command Prompt and run:
+     ```powershell
+     node --version
+     npm --version
+     ```
+
+2. **Install Wrangler CLI**:
+   ```powershell
    npm install -g wrangler
    ```
-3. Login to Cloudflare:
-   ```bash
+   - This works in PowerShell, Command Prompt, or Git Bash
+   - Verify installation:
+     ```powershell
+     wrangler --version
+     ```
+
+3. **Login to Cloudflare**:
+   ```powershell
    wrangler login
    ```
+   - This will open your browser for authentication
+   - Works the same on Windows, macOS, and Linux
 
 ### Deploy the Worker
 
-1. **Navigate to the worker directory**:
-   ```bash
+1. **Open PowerShell or Command Prompt**
+   - Press `Win + X` and select "Windows PowerShell" or "Terminal"
+   - Or search for "PowerShell" in Start menu
+
+2. **Navigate to the project directory**:
+   ```powershell
+   cd D:\Git\llm-appliance-mainpage
+   ```
+
+3. **Navigate to the worker directory**:
+   ```powershell
    cd worker
    ```
 
-2. **Deploy the worker**:
-   ```bash
+4. **Deploy the worker**:
+   ```powershell
    wrangler deploy
    ```
+   - First time will prompt you to allow Cloudflare to manage your Workers
+   - Type `y` to confirm
 
-3. **Set environment variables** (after first deployment):
-   ```bash
+5. **Set environment variables** (after first deployment):
+   ```powershell
    # Turnstile secret key (required)
    wrangler secret put TURNSTILE_SECRET_KEY
+   # Paste your secret key when prompted, then press Enter
    
    # Optional: SendGrid API key for email notifications
    wrangler secret put SENDGRID_API_KEY
@@ -42,6 +70,8 @@
    # Optional: Webhook URL
    wrangler secret put WEBHOOK_URL
    ```
+   
+   **Note**: When entering secrets, the input is hidden (you won't see what you type). Just paste and press Enter.
 
 4. **Get your Worker URL**:
    After deployment, Wrangler will show you the Worker URL, something like:
@@ -103,20 +133,17 @@ jobs:
 
 ## Testing the Worker
 
-After deployment, test with:
+After deployment, test with PowerShell (Windows 10/11 includes curl):
 
-```bash
-curl -X POST https://YOUR_WORKER_URL.workers.dev/contact \
-  -H "Content-Type: application/json" \
-  -d '{
-    "name": "Test User",
-    "email": "test@example.com",
-    "company": "Test Company",
-    "role": "Developer",
-    "message": "Test message",
-    "cf-turnstile-response": "test-token"
-  }'
+```powershell
+curl.exe -X POST https://YOUR_WORKER_URL.workers.dev/contact `
+  -H "Content-Type: application/json" `
+  -d '{\"name\":\"Test User\",\"email\":\"test@example.com\",\"company\":\"Test Company\",\"role\":\"Developer\",\"message\":\"Test message\",\"cf-turnstile-response\":\"test-token\"}'
 ```
+
+**Note**: In PowerShell, use backticks (`) for line continuation, and escape quotes with backslashes.
+
+**Alternative**: Use a tool like Postman, or test directly from your website's contact form.
 
 ## Troubleshooting
 
