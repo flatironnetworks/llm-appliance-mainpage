@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>LLM Appliance - Self-Hosted LLM with Zero Data Retention | Flatiron Networks</title>
+    <meta name="title" content="LLM Appliance - Self-Hosted LLM with Zero Data Retention">
+    <meta name="description" content="Self-hosted LLM solution with zero data retention and complete data sovereignty. Perfect for healthcare, financial services, government, and regulated industries. Deploy on-premise AI in under an hour with no infrastructure expertise required.">
+    <meta name="keywords" content="self-hosted LLM, on-premise AI, zero data retention, data sovereignty, HIPAA compliant AI, enterprise LLM, private AI, on-premise language model, secure AI, compliance AI, healthcare AI, financial services AI, government AI, regulated industries AI">
+    <meta name="author" content="Flatiron Networks, Inc.">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <link rel="canonical" href="https://llmappliance.com/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://llmappliance.com/">
+    <meta property="og:title" content="LLM Appliance - Self-Hosted LLM with Zero Data Retention">
+    <meta property="og:description" content="Self-hosted LLM solution with zero data retention and complete data sovereignty. Perfect for regulated industries. Deploy on-premise AI in under an hour.">
+    <meta property="og:image" content="https://llmappliance.com/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="LLM Appliance - Self-Hosted LLM with Zero Data Retention">
+    <meta property="og:site_name" content="LLM Appliance">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://llmappliance.com/">
+    <meta name="twitter:title" content="LLM Appliance - Self-Hosted LLM with Zero Data Retention">
+    <meta name="twitter:description" content="Self-hosted LLM solution with zero data retention and complete data sovereignty. Perfect for regulated industries. Deploy on-premise AI in under an hour.">
+    <meta name="twitter:image" content="https://llmappliance.com/twitter-image.jpg">
+    <meta name="twitter:image:alt" content="LLM Appliance - Self-Hosted LLM with Zero Data Retention">
+    <meta name="twitter:creator" content="@flatironnetworks">
+    <meta name="twitter:site" content="@flatironnetworks">
+    
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#6366f1">
+    <meta name="msapplication-TileColor" content="#6366f1">
+    <meta name="application-name" content="LLM Appliance">
+    
+    <!-- Favicon (add when available) -->
+    <!-- <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest"> -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "LLM Appliance",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Ubuntu 24.04 LTS",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "description": "Self-hosted LLM solution with zero data retention and complete data sovereignty. Deploy on-premise AI in under an hour with no infrastructure expertise required.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Flatiron Networks, Inc.",
+        "url": "https://flatironnetworks.com"
+      },
+      "featureList": [
+        "Zero data retention",
+        "Complete data sovereignty",
+        "No external reporting",
+        "Pre-validated models",
+        "OpenAI-compatible API",
+        "Deploy in under an hour",
+        "No infrastructure expertise required"
+      ],
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Healthcare, Financial Services, Government, Legal, Enterprise"
+      }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Flatiron Networks, Inc.",
+      "url": "https://flatironnetworks.com",
+      "logo": "https://llmappliance.com/logo.png",
+      "sameAs": [
+        "https://www.linkedin.com/company/flatiron-networks"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Sales",
+        "email": "sales@flatironnetworks.com"
+      }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "LLM Appliance",
+      "url": "https://llmappliance.com",
+      "description": "Self-hosted LLM with zero data retention. Complete data sovereignty for your AI infrastructure.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://llmappliance.com/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="brand-text">LLM Appliance</span>
+            </div>
+            <div class="nav-links">
+                <a href="#use-cases">Industries</a>
+                <a href="#features">Features</a>
+                <a href="#comparison">Comparison</a>
+                <a href="#contact" class="cta-button-nav">Request POC</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-icon">🔒</span>
+                    <span>Zero Data Retention • Complete Privacy</span>
+                </div>
+                <h1 class="hero-title">
+                    Self-Hosted LLM with
+                    <span class="gradient-text">Zero Data Retention</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Enable your organization to leverage AI without privacy or data exfiltration concerns. 
+                    Complete data sovereignty. No external reporting. Deploy in under an hour.
+                </p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">
+                        Request 2-Week POC
+                        <span class="btn-arrow">→</span>
+                    </a>
+                    <a href="#how-it-works" class="btn btn-secondary">
+                        See How It Works
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">&lt;1 hour</div>
+                        <div class="stat-label">Deployment Time</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">0%</div>
+                        <div class="stat-label">Data Retention</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">On-Premise</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section id="use-cases" class="use-cases-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Perfect For Regulated Industries</h2>
+                <p class="section-subtitle">Organizations that cannot risk sending sensitive data to cloud providers</p>
+            </div>
+            <div class="use-cases-grid">
+                <div class="use-case-card">
+                    <div class="use-case-icon">🏥</div>
+                    <h3>Healthcare</h3>
+                    <p>HIPAA compliance requires patient data to stay on-premise. Zero data retention ensures complete privacy.</p>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">💼</div>
+                    <h3>Financial Services</h3>
+                    <p>Regulatory requirements demand data sovereignty. No external reporting means complete control.</p>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">🏛️</div>
+                    <h3>Government</h3>
+                    <p>Federal and state agencies need air-gapped solutions. 100% on-premise with zero data retention.</p>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">⚖️</div>
+                    <h3>Legal</h3>
+                    <p>Attorney-client privilege requires complete confidentiality. All inference stays on your network.</p>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">🔬</div>
+                    <h3>Research</h3>
+                    <p>Proprietary research data cannot leave your network. Complete data sovereignty for sensitive work.</p>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">🏢</div>
+                    <h3>Enterprise</h3>
+                    <p>Organizations with strict data governance policies. Zero data retention and no external reporting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section - Cloud AI -->
+    <section id="problems" class="problem-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">The Problem with Cloud AI</h2>
+                <p class="section-subtitle">Organizations need AI, but can't risk sending sensitive data outside their network</p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">🚫</div>
+                    <h3>Data Exfiltration Risk</h3>
+                    <p>Every prompt, every conversation sent to cloud providers creates compliance and security risks. Your sensitive data leaves your network with every API call.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">📊</div>
+                    <h3>Usage Data Tracking</h3>
+                    <p>Cloud providers log and analyze your usage patterns, creating privacy concerns. Your AI interactions become part of their training data.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">💰</div>
+                    <h3>Unpredictable Costs</h3>
+                    <p>Usage-based pricing means bills can spiral out of control. No way to predict monthly costs as usage scales.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🔒</div>
+                    <h3>No Data Sovereignty</h3>
+                    <p>You have no control over where your data is stored, processed, or who has access to it. Compliance becomes impossible.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section - Self-Hosted AI -->
+    <section class="problem-section problem-section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">The Problem with Self-Hosted AI</h2>
+                <p class="section-subtitle">DIY solutions require expertise and time that most teams simply don't have</p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">🏗️</div>
+                    <h3>Specialized Expertise Required</h3>
+                    <p>LLM deployment, GPU optimization, and model management require deep technical knowledge most teams don't possess.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">⏱️</div>
+                    <h3>Months of Setup</h3>
+                    <p>Enterprise GPU servers take weeks or months to configure, validate, and get production-ready. Time your team doesn't have.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">❓</div>
+                    <h3>Model Validation Uncertainty</h3>
+                    <p>How do you know if a model actually works before deploying? Most teams discover failures only after weeks of setup.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🔧</div>
+                    <h3>Ongoing Maintenance Burden</h3>
+                    <p>Hardware failures, driver updates, model updates, and troubleshooting consume engineering time that should be spent building products.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Complete Data Sovereignty</h2>
+                <p class="section-subtitle">Everything you need for on-premise AI without the complexity</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>Zero Data Retention</h3>
+                    <p>Conversations, prompts, and model interactions are never stored or logged. All inference happens in memory with no persistent storage.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚫</div>
+                    <h3>No External Reporting</h3>
+                    <p>Zero usage data reported outside your organization. Complete data sovereignty with no telemetry or analytics.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Deploy in Under an Hour</h3>
+                    <p>Plug in, boot, configure IP, install VSCode plugins. No complex setup or data center requirements. No specialized infrastructure expertise needed.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✅</div>
+                    <h3>Pre-Validated Models</h3>
+                    <p>All models are tested and validated prior to being enabled. We ensure every model works exactly as promised before you deploy it.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3>No Infrastructure Expertise Required</h3>
+                    <p>Pre-configured hardware and software bundle eliminates the need for deep knowledge of LLM deployment, GPU optimization, or model management.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>OpenAI-Compatible API</h3>
+                    <p>Drop-in replacement for existing code. Change one line and you're running on-premise. Works with your existing tools and workflows.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🖥️</div>
+                    <h3>Desktop Form Factor</h3>
+                    <p>Pre-configured desktop hardware that fits your office, not a data center. Easy to deploy and maintain without specialized infrastructure.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Complete Service Bundle</h3>
+                    <p>Hardware, software, warranty, and support included. Fixed per-device pricing with predictable costs. No usage-based fees or surprise bills.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-subtitle">Three simple steps to complete data sovereignty</p>
+            </div>
+            <div class="steps-container">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Plug In & Boot</h3>
+                        <p>Unbox your LLM Appliance unit, plug it in, and boot it up. No complex setup required.</p>
+                    </div>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Configure IP & Install</h3>
+                        <p>Configure the IP address and install our VSCode plugins. Connect to your development environment.</p>
+                    </div>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Start Building</h3>
+                        <p>Pre-validated models are ready immediately. Start using AI with complete data sovereignty in under an hour.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section id="comparison" class="comparison-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why LLM Appliance?</h2>
+                <p class="section-subtitle">Complete data sovereignty without the complexity</p>
+            </div>
+            <div class="comparison-table">
+                <div class="comparison-header">
+                    <div class="comparison-feature">Feature</div>
+                    <div class="comparison-option">LLM Appliance</div>
+                    <div class="comparison-option">Cloud APIs</div>
+                    <div class="comparison-option">DIY Solutions</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-feature">Data Retention</div>
+                    <div class="comparison-option highlight">✓ Zero</div>
+                    <div class="comparison-option">✗ Logged</div>
+                    <div class="comparison-option">Varies</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-feature">External Reporting</div>
+                    <div class="comparison-option highlight">✓ None</div>
+                    <div class="comparison-option">✗ Yes</div>
+                    <div class="comparison-option">Varies</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-feature">Infrastructure Expertise</div>
+                    <div class="comparison-option highlight">✗ Not Required</div>
+                    <div class="comparison-option">N/A</div>
+                    <div class="comparison-option">✓ Required</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-feature">Pre-Validated Models</div>
+                    <div class="comparison-option highlight">✓ Yes</div>
+                    <div class="comparison-option">N/A</div>
+                    <div class="comparison-option">✗ Manual</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-feature">Setup Time</div>
+                    <div class="comparison-option highlight">Under 1 hour</div>
+                    <div class="comparison-option">Instant</div>
+                    <div class="comparison-option">Weeks</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-feature">Data Sovereignty</div>
+                    <div class="comparison-option highlight">✓ 100%</div>
+                    <div class="comparison-option">✗ Cloud</div>
+                    <div class="comparison-option">Varies</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Deploy On-Premise AI?</h2>
+                <p class="cta-subtitle">Request a 2-week proof of concept. No commitment required.</p>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="role">Role</label>
+                            <input type="text" id="role" name="role" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Tell us about your use case</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group turnstile-container">
+                        <div class="cf-turnstile" data-sitekey="YOUR_TURNSTILE_SITE_KEY"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">
+                        Request 2-Week POC
+                        <span class="btn-arrow">→</span>
+                    </button>
+                </form>
+                <div class="form-success" id="formSuccess" style="display: none;">
+                    <div class="success-icon">✓</div>
+                    <h3>Thank you for your interest!</h3>
+                    <p>We'll be in touch within 24 hours to discuss your proof of concept.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="brand-text">LLM Appliance</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#use-cases">Industries</a>
+                    <a href="#features">Features</a>
+                    <a href="#comparison">Comparison</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Flatiron Networks, Inc. All rights reserved.</p>
+                <p class="footer-tagline">Self-Hosted LLM with Zero Data Retention</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
