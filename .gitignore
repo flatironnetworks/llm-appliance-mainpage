@@ -24,5 +24,11 @@ build/
 *.min.js
 *.min.css
 
+# Wrangler/Cloudflare
+.wrangler/
+wrangler.toml.local
+.wrangler.toml
+*.log
+
 # Cloudflare configuration (keep this for Pages)
 # wrangler.toml is needed for Pages deployment
