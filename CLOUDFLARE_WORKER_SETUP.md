@@ -4,7 +4,38 @@
 
 The contact form uses a Cloudflare Worker to handle form submissions. This guide walks you through setting it up.
 
-## Step 1: Create the Worker
+## Step 1: Deploy the Worker
+
+**Important**: The web UI uploader doesn't support JavaScript files. You must use Wrangler CLI to deploy.
+
+### Option A: Using Wrangler CLI (Recommended)
+
+1. **Install Wrangler CLI**:
+   ```bash
+   npm install -g wrangler
+   ```
+
+2. **Login to Cloudflare**:
+   ```bash
+   wrangler login
+   ```
+
+3. **Navigate to worker directory**:
+   ```bash
+   cd worker
+   ```
+
+4. **Deploy the worker**:
+   ```bash
+   wrangler deploy
+   ```
+
+5. **Get your Worker URL**:
+   - After deployment, Wrangler will show you the URL
+   - It will be something like: `https://llm-appliance-form-handler.YOUR_SUBDOMAIN.workers.dev`
+   - Copy this URL
+
+### Option B: Using Cloudflare Dashboard (Manual Copy)
 
 1. **Go to Cloudflare Dashboard**
    - Navigate to **Workers & Pages** → **Create** → **Worker**
@@ -14,13 +45,15 @@ The contact form uses a Cloudflare Worker to handle form submissions. This guide
    - Click **Deploy**
 
 3. **Add the code**
-   - Copy the contents of `worker.js` from this repository
+   - Copy the contents of `worker/worker.js` from this repository
    - Paste it into the worker editor
    - Click **Save and deploy**
 
 4. **Get your Worker URL**
    - After deployment, you'll see a URL like: `https://llm-appliance-form-handler.YOUR_SUBDOMAIN.workers.dev`
    - Copy this URL
+
+**Note**: See `worker/DEPLOY.md` for detailed deployment instructions.
 
 ## Step 2: Update the Frontend
 

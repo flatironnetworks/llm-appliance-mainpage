@@ -1,0 +1,19 @@
+# Cloudflare Worker Configuration for LLM Appliance Contact Form
+# Deploy with: wrangler deploy
+
+name = "llm-appliance-form-handler"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+# Environment variables (set these in Cloudflare Dashboard or via wrangler secret put)
+# TURNSTILE_SECRET_KEY - Your Cloudflare Turnstile secret key
+# SENDGRID_API_KEY - Your SendGrid API key (optional, for email notifications)
+# NOTIFICATION_EMAIL - Email address to receive form submissions (optional)
+# FROM_EMAIL - Email address to send from (optional)
+# WEBHOOK_URL - Webhook URL for notifications (optional)
+
+# D1 Database binding (optional, if using database storage)
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "llm-appliance-contacts"
+# database_id = "your-database-id"
