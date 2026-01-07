@@ -12,20 +12,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar scroll effect
+// Navbar scroll effect and parallax orbs
 const navbar = document.querySelector('.navbar');
-let lastScroll = 0;
 
 window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll > 100) {
+    const scrolled = window.pageYOffset;
+
+    // Navbar effect
+    if (scrolled > 100) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
     }
-    
-    lastScroll = currentScroll;
+
+    // Parallax effect for hero background orbs
+    const orbs = document.querySelectorAll('.gradient-orb');
+    orbs.forEach((orb, index) => {
+        const speed = 0.5 + (index * 0.1);
+        orb.style.transform = `translateY(${scrolled * speed}px)`;
+    });
 });
 
 // Mobile menu toggle
@@ -34,8 +39,9 @@ const navLinks = document.querySelector('.nav-links');
 
 if (mobileMenuToggle) {
     mobileMenuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
+        const isExpanded = navLinks.classList.toggle('active');
         mobileMenuToggle.classList.toggle('active');
+        mobileMenuToggle.setAttribute('aria-expanded', isExpanded);
     });
 }
 
@@ -44,6 +50,7 @@ document.addEventListener('click', (e) => {
     if (navLinks && !navLinks.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
         navLinks.classList.remove('active');
         mobileMenuToggle.classList.remove('active');
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
     }
 });
 
@@ -67,16 +74,6 @@ document.querySelectorAll('.feature-card, .problem-card, .use-case-card, .step-i
 });
 
 
-// Add parallax effect to hero background orbs
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const orbs = document.querySelectorAll('.gradient-orb');
-    
-    orbs.forEach((orb, index) => {
-        const speed = 0.5 + (index * 0.1);
-        orb.style.transform = `translateY(${scrolled * speed}px)`;
-    });
-});
 
 // Add hover effect to feature cards
 document.querySelectorAll('.feature-card').forEach(card => {
