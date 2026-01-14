@@ -885,6 +885,10 @@ body {
     min-height: 120px;
 }
 
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
 .turnstile-container {
     margin: 1.5rem 0;
     display: flex;

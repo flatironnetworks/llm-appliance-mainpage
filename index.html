@@ -465,16 +465,47 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- Contact Section -->
     <section id="contact" class="cta-section">
         <div class="container">
             <div class="cta-content">
                 <h2 class="cta-title">Ready to Deploy On-Premise AI?</h2>
                 <p class="cta-subtitle">Request a 2-week proof of concept. No commitment required.</p>
-                <a href="https://www.flatironnetworks.com/contactus" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">
-                    Contact Us
-                    <span class="btn-arrow">→</span>
-                </a>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        <div class="form-group">
+                            <label for="role">Role</label>
+                            <input type="text" id="role" name="role">
+                        </div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="message">Tell us about your use case</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <div class="turnstile-container">
+                        <div class="cf-turnstile" data-sitekey="0x4AAAAAACKjqbiEHC-qAzbn"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">Send Message</button>
+                </form>
+                <div class="form-success" id="formSuccess" style="display: none;">
+                    <div class="success-icon">✓</div>
+                    <h3>Thank you!</h3>
+                    <p>We'll be in touch soon.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -501,6 +532,7 @@
         </div>
     </footer>
 
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <script src="script.js"></script>
 </body>
 </html>

@@ -174,3 +174,63 @@ window.addEventListener('load', () => {
 console.log('%c⚡ LLM Appliance', 'font-size: 20px; font-weight: bold; color: #157DC8;');
 console.log('%cSelf-Hosted LLM with Zero Data Retention', 'font-size: 12px; color: #666666;');
 console.log('%cInterested in learning more? Visit our contact form!', 'font-size: 12px; color: #157DC8;');
+
+// Contact form submission handler
+const contactForm = document.getElementById('contactForm');
+const formSuccess = document.getElementById('formSuccess');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // Get Turnstile token
+        const turnstileResponse = document.querySelector('[name="cf-turnstile-response"]');
+        const token = turnstileResponse ? turnstileResponse.value : null;
+
+        if (!token) {
+            alert('Please complete the CAPTCHA verification.');
+            return;
+        }
+
+        // Collect form data
+        const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            company: document.getElementById('company').value,
+            role: document.getElementById('role').value,
+            message: document.getElementById('message').value,
+            'cf-turnstile-response': token
+        };
+
+        // Disable submit button during request
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+
+        try {
+            const response = await fetch('https://llm-appliance-form-handler.rob-fauls-holdings-llc.workers.dev', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+
+            if (response.ok) {
+                // Show success message
+                contactForm.style.display = 'none';
+                formSuccess.style.display = 'block';
+            } else {
+                const errorData = await response.json().catch(() => ({}));
+                alert(errorData.error || 'There was an error submitting the form. Please try again.');
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            alert('There was an error submitting the form. Please try again.');
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
+        }
+    });
+}
