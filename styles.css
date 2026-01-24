@@ -647,6 +647,29 @@ body {
     gap: 2rem;
 }
 
+.features-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+    .features-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .features-grid-4 {
+        grid-template-columns: 1fr;
+    }
+}
+
+.features-cta {
+    text-align: center;
+    margin-top: 3rem;
+}
+
 .feature-card {
     background: var(--card-bg);
     padding: 2.5rem;
