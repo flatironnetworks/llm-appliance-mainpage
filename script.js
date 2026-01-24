@@ -89,6 +89,18 @@ document.addEventListener('click', (e) => {
     }
 });
 
+// Mobile dropdown toggle
+document.querySelectorAll('.nav-dropdown > a').forEach(dropdownToggle => {
+    dropdownToggle.addEventListener('click', (e) => {
+        // Only handle on mobile (when nav-links is in mobile mode)
+        if (window.innerWidth <= 768) {
+            e.preventDefault();
+            const dropdown = dropdownToggle.parentElement;
+            dropdown.classList.toggle('active');
+        }
+    });
+});
+
 // Intersection Observer for fade-in animations
 const observerOptions = {
     threshold: 0.1,

@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WJ3P3WG5');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X2T46WCDJK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-X2T46WCDJK');
+    </script>
+
+    <!-- Primary Meta Tags -->
+    <title>Developers - LLM Appliance | OpenAI-Compatible API, Full REST Access</title>
+    <meta name="title" content="Developers - LLM Appliance | OpenAI-Compatible API, Full REST Access">
+    <meta name="description" content="Build with LLM Appliance. OpenAI-compatible API for drop-in replacement. Full REST API for automation. LAN latency, no rate limits, no per-token costs.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://llmappliance.com/developers.html">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        .dev-hero {
+            padding: 8rem 0 4rem;
+            background: var(--bg-secondary);
+            text-align: center;
+        }
+
+        .dev-hero .hero-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .dev-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .dev-hero .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .api-section {
+            padding: 4rem 0;
+        }
+
+        .api-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .api-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .api-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .api-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .api-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .api-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .code-section {
+            padding: 4rem 0;
+            background: var(--bg-secondary);
+        }
+
+        .code-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .code-content h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .code-content > p {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .code-block {
+            background: #1e1e1e;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            overflow-x: auto;
+            margin-bottom: 1rem;
+        }
+
+        .code-block pre {
+            margin: 0;
+            color: #d4d4d4;
+            font-family: 'Fira Code', 'Monaco', 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .code-block .comment {
+            color: #6a9955;
+        }
+
+        .code-block .keyword {
+            color: #569cd6;
+        }
+
+        .code-block .string {
+            color: #ce9178;
+        }
+
+        .code-block .function {
+            color: #dcdcaa;
+        }
+
+        .code-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .performance-section {
+            padding: 4rem 0;
+        }
+
+        .performance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .performance-stat {
+            text-align: center;
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .performance-stat .number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .performance-stat .label {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .performance-stat .detail {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .integration-section {
+            padding: 4rem 0;
+            background: var(--bg-secondary);
+        }
+
+        .integration-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .integration-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .integration-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .integration-card .icon {
+            font-size: 1.25rem;
+        }
+
+        .integration-card .code-inline {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            font-family: 'Fira Code', 'Monaco', 'Courier New', monospace;
+            font-size: 0.85rem;
+            overflow-x: auto;
+        }
+
+        .models-section {
+            padding: 4rem 0;
+        }
+
+        .models-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .model-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.5rem;
+            background: var(--card-bg);
+            border-radius: 0.75rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .model-item .check {
+            color: #22c55e;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .model-item span {
+            font-weight: 500;
+        }
+
+        .cta-dev {
+            padding: 4rem 0;
+            background: var(--bg-secondary);
+            text-align: center;
+        }
+
+        .cta-dev h2 {
+            margin-bottom: 1rem;
+        }
+
+        .cta-dev p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+            .dev-hero h1 {
+                font-size: 2rem;
+            }
+
+            .dev-hero .hero-icon {
+                font-size: 3rem;
+            }
+
+            .code-block pre {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WJ3P3WG5"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="nav-brand">
+                <span class="brand-text">LLM Appliance</span>
+                <span class="brand-subtitle">by Flatiron Networks</span>
+            </a>
+            <div class="nav-links" id="nav-links">
+                <a href="/">Home</a>
+                <div class="nav-dropdown">
+                    <a href="#">Solutions <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown-menu">
+                        <a href="/healthcare.html">Healthcare</a>
+                        <a href="/financial-services.html">Financial Services</a>
+                        <a href="/government.html">Government</a>
+                        <a href="/legal.html">Legal</a>
+                        <a href="/research.html">Research</a>
+                        <a href="/enterprise.html">Enterprise</a>
+                    </div>
+                </div>
+                <a href="/platform-overview.html">Platform Overview</a>
+                <a href="/security.html">Security</a>
+                <a href="/pricing.html">Pricing</a>
+                <a href="/#contact" class="cta-button-nav">Request POC</a>
+                <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="dev-hero">
+        <div class="container">
+            <div class="hero-icon">👨‍💻</div>
+            <h1>Build with LLM Appliance</h1>
+            <p class="subtitle">OpenAI-compatible API for drop-in replacement. Full REST API for automation. LAN latency, no rate limits, no per-token costs.</p>
+            <a href="/#contact" class="btn btn-primary btn-large">Request Developer POC</a>
+        </div>
+    </section>
+
+    <!-- API Overview -->
+    <section class="api-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">API Overview</h2>
+                <p class="section-subtitle">Two APIs for different needs</p>
+            </div>
+            <div class="api-grid">
+                <div class="api-card">
+                    <div class="icon">🔌</div>
+                    <h3>OpenAI-Compatible Endpoint</h3>
+                    <p>Drop-in replacement for OpenAI API. Change one line of code to switch from cloud to local. Works with existing SDKs, libraries, and tools.</p>
+                </div>
+                <div class="api-card">
+                    <div class="icon">🔧</div>
+                    <h3>Full REST API</h3>
+                    <p>Complete programmatic access to all management functions. Deploy models, check status, manage users, and automate operations.</p>
+                </div>
+                <div class="api-card">
+                    <div class="icon">📖</div>
+                    <h3>Interactive Documentation</h3>
+                    <p>Swagger/OpenAPI documentation with live testing. Explore the API interactively and generate code snippets.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Start -->
+    <section class="code-section">
+        <div class="container">
+            <div class="code-content">
+                <h2>Quick Start</h2>
+                <p>Switch from cloud to local with a single line change</p>
+
+                <div class="code-label">Before (Cloud)</div>
+                <div class="code-block">
+<pre><span class="keyword">from</span> openai <span class="keyword">import</span> OpenAI
+
+client = OpenAI(
+    <span class="string">api_key</span>=<span class="string">"sk-..."</span>,
+    <span class="comment"># Default: api.openai.com</span>
+)
+
+response = client.chat.completions.<span class="function">create</span>(
+    <span class="string">model</span>=<span class="string">"gpt-4"</span>,
+    <span class="string">messages</span>=[{<span class="string">"role"</span>: <span class="string">"user"</span>, <span class="string">"content"</span>: <span class="string">"Hello!"</span>}]
+)</pre>
+                </div>
+
+                <div class="code-label">After (LLM Appliance)</div>
+                <div class="code-block">
+<pre><span class="keyword">from</span> openai <span class="keyword">import</span> OpenAI
+
+client = OpenAI(
+    <span class="string">api_key</span>=<span class="string">"your-api-key"</span>,
+    <span class="string">base_url</span>=<span class="string">"http://llm-appliance.local/v1"</span>  <span class="comment"># Just add this line</span>
+)
+
+response = client.chat.completions.<span class="function">create</span>(
+    <span class="string">model</span>=<span class="string">"llama-3.3-70b"</span>,
+    <span class="string">messages</span>=[{<span class="string">"role"</span>: <span class="string">"user"</span>, <span class="string">"content"</span>: <span class="string">"Hello!"</span>}]
+)</pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance -->
+    <section class="performance-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Performance</h2>
+                <p class="section-subtitle">LAN speed, unlimited usage</p>
+            </div>
+            <div class="performance-grid">
+                <div class="performance-stat">
+                    <div class="number">1-5ms</div>
+                    <div class="label">LAN Latency</div>
+                    <div class="detail">vs 200-500ms cloud</div>
+                </div>
+                <div class="performance-stat">
+                    <div class="number">0</div>
+                    <div class="label">Rate Limits</div>
+                    <div class="detail">No throttling</div>
+                </div>
+                <div class="performance-stat">
+                    <div class="number">$0</div>
+                    <div class="label">Per-Token Cost</div>
+                    <div class="detail">Fixed pricing only</div>
+                </div>
+                <div class="performance-stat">
+                    <div class="number">100%</div>
+                    <div class="label">Uptime Control</div>
+                    <div class="detail">No cloud dependencies</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integration Examples -->
+    <section class="integration-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Integration Examples</h2>
+                <p class="section-subtitle">Works with your existing tools</p>
+            </div>
+            <div class="integration-grid">
+                <div class="integration-card">
+                    <h3><span class="icon">🐍</span> Python / OpenAI SDK</h3>
+                    <div class="code-inline">base_url="http://llm-appliance.local/v1"</div>
+                </div>
+                <div class="integration-card">
+                    <h3><span class="icon">📟</span> curl</h3>
+                    <div class="code-inline">curl http://llm-appliance.local/v1/chat/completions</div>
+                </div>
+                <div class="integration-card">
+                    <h3><span class="icon">💻</span> VSCode Extensions</h3>
+                    <div class="code-inline">Configure endpoint in extension settings</div>
+                </div>
+                <div class="integration-card">
+                    <h3><span class="icon">🔄</span> LangChain / LlamaIndex</h3>
+                    <div class="code-inline">Set base_url parameter in LLM config</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Model Availability -->
+    <section class="models-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Model Availability</h2>
+                <p class="section-subtitle">Pre-validated open models ready to use</p>
+            </div>
+            <div class="models-list">
+                <div class="model-item">
+                    <span class="check">✓</span>
+                    <span>Llama 3.3 (70B, 8B)</span>
+                </div>
+                <div class="model-item">
+                    <span class="check">✓</span>
+                    <span>Qwen 2.5 (72B, 32B, 14B, 7B)</span>
+                </div>
+                <div class="model-item">
+                    <span class="check">✓</span>
+                    <span>DeepSeek models</span>
+                </div>
+                <div class="model-item">
+                    <span class="check">✓</span>
+                    <span>Mistral / Mixtral</span>
+                </div>
+                <div class="model-item">
+                    <span class="check">✓</span>
+                    <span>Code-specialized models</span>
+                </div>
+                <div class="model-item">
+                    <span class="check">✓</span>
+                    <span>Custom model deployment</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-dev">
+        <div class="container">
+            <h2>Ready to Build?</h2>
+            <p>Request a 2-week proof of concept. Test the API with your team and integrate with your existing workflows.</p>
+            <a href="/#contact" class="btn btn-primary btn-large">Request Developer POC</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <a href="/" class="footer-brand">
+                    <span class="brand-text">LLM Appliance</span>
+                    <span class="brand-subtitle">by Flatiron Networks</span>
+                </a>
+                <div class="footer-links">
+                    <a href="/">Home</a>
+                    <a href="/platform-overview.html">Platform Overview</a>
+                    <a href="/security.html">Security</a>
+                    <a href="/pricing.html">Pricing</a>
+                    <a href="/#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Flatiron Networks, Inc. All rights reserved.</p>
+                <p class="footer-tagline">Self-Hosted LLM with Zero Data Retention</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
