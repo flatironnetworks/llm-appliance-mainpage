@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WJ3P3WG5');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X2T46WCDJK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-X2T46WCDJK');
+    </script>
+
+    <!-- Primary Meta Tags -->
+    <title>For CTOs - LLM Appliance | Self-Hosted LLM with Zero Data Retention</title>
+    <meta name="title" content="For CTOs - LLM Appliance | Self-Hosted LLM with Zero Data Retention">
+    <meta name="description" content="Executive overview for CTOs evaluating self-hosted LLM solutions. Zero data retention, complete data sovereignty, enterprise controls, and predictable pricing.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://llmappliance.com/for-ctos.html">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        .cto-hero {
+            padding: 8rem 0 4rem;
+            background: var(--bg-secondary);
+        }
+
+        .cto-hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .cto-hero .tagline {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .cto-hero .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+        }
+
+        .challenge-section {
+            padding: 4rem 0;
+        }
+
+        .challenge-section h2 {
+            margin-bottom: 2rem;
+        }
+
+        .challenge-list {
+            display: grid;
+            gap: 1rem;
+            max-width: 700px;
+        }
+
+        .challenge-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--card-bg);
+            border-radius: 0.5rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .challenge-icon {
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        .challenge-item h4 {
+            margin-bottom: 0.25rem;
+        }
+
+        .challenge-item p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .solution-section {
+            padding: 4rem 0;
+            background: var(--bg-secondary);
+        }
+
+        .solution-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .solution-intro h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .solution-intro p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .capabilities-table {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 1rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: var(--card-bg);
+        }
+
+        .capabilities-row {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .capabilities-row:last-child {
+            border-bottom: none;
+        }
+
+        .capabilities-label {
+            padding: 1rem 1.5rem;
+            font-weight: 600;
+            background: var(--bg-secondary);
+        }
+
+        .capabilities-value {
+            padding: 1rem 1.5rem;
+        }
+
+        .enterprise-controls {
+            padding: 4rem 0;
+        }
+
+        .controls-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .control-category {
+            background: var(--card-bg);
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .control-category h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .control-list {
+            list-style: none;
+        }
+
+        .control-list li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .control-list li::before {
+            content: '✓';
+            color: var(--primary-color);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .control-list li strong {
+            display: block;
+        }
+
+        .control-list li span {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .comparison-section {
+            padding: 4rem 0;
+            background: var(--bg-secondary);
+        }
+
+        .comparison-table-wrapper {
+            max-width: 900px;
+            margin: 2rem auto 0;
+            overflow-x: auto;
+        }
+
+        .cto-comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            border-radius: 1rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .cto-comparison-table th,
+        .cto-comparison-table td {
+            padding: 1rem 1.5rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .cto-comparison-table th {
+            background: var(--bg-dark);
+            color: white;
+            font-weight: 600;
+        }
+
+        .cto-comparison-table th:first-child,
+        .cto-comparison-table td:first-child {
+            text-align: left;
+        }
+
+        .cto-comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .cto-comparison-table .good {
+            color: #22c55e;
+        }
+
+        .cto-comparison-table .bad {
+            color: #ef4444;
+        }
+
+        .cto-comparison-table .neutral {
+            color: var(--text-secondary);
+        }
+
+        .pricing-summary {
+            padding: 4rem 0;
+        }
+
+        .pricing-summary-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .pricing-summary h2 {
+            margin-bottom: 1rem;
+        }
+
+        .pricing-summary .price-highlight {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin: 1.5rem 0;
+        }
+
+        .pricing-summary .price-highlight span {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .pricing-tiers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .pricing-tier {
+            padding: 1.5rem;
+            background: var(--card-bg);
+            border-radius: 0.5rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .pricing-tier h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-tier .tier-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .pricing-tier .tier-price span {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-tier p {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+
+        .next-steps {
+            padding: 4rem 0;
+            background: var(--bg-secondary);
+        }
+
+        .next-steps-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .next-steps h2 {
+            margin-bottom: 2rem;
+        }
+
+        .steps-list {
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-number {
+            width: 2rem;
+            height: 2rem;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-item h4 {
+            margin-bottom: 0.25rem;
+        }
+
+        .step-item p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .cto-hero h1 {
+                font-size: 2rem;
+            }
+
+            .capabilities-row {
+                grid-template-columns: 1fr;
+            }
+
+            .capabilities-label {
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            .pricing-summary .price-highlight {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WJ3P3WG5"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="nav-brand">
+                <span class="brand-text">LLM Appliance</span>
+                <span class="brand-subtitle">by Flatiron Networks</span>
+            </a>
+            <div class="nav-links" id="nav-links">
+                <a href="/">Home</a>
+                <a href="/pricing.html">Pricing</a>
+                <a href="/security.html">Security</a>
+                <a href="/#contact" class="cta-button-nav">Request POC</a>
+                <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="cto-hero">
+        <div class="container">
+            <h1>LLM Appliance</h1>
+            <p class="tagline">Self-Hosted LLM with Zero Data Retention</p>
+            <p class="subtitle">Pre-configured hardware and software delivered as a complete service lease. Deploy in under an hour. Zero data retention. No usage data reported outside your organization.</p>
+        </div>
+    </section>
+
+    <!-- The Challenge -->
+    <section class="challenge-section">
+        <div class="container">
+            <h2>The Challenge</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">Your organization needs to leverage AI within operations, but:</p>
+            <div class="challenge-list">
+                <div class="challenge-item">
+                    <div class="challenge-icon">🔒</div>
+                    <div>
+                        <h4>Data cannot leave your network</h4>
+                        <p>Compliance requirements prohibit cloud AI services</p>
+                    </div>
+                </div>
+                <div class="challenge-item">
+                    <div class="challenge-icon">🏗️</div>
+                    <div>
+                        <h4>No specialized infrastructure team</h4>
+                        <p>You lack LLM deployment and GPU optimization expertise</p>
+                    </div>
+                </div>
+                <div class="challenge-item">
+                    <div class="challenge-icon">💰</div>
+                    <div>
+                        <h4>Unpredictable costs</h4>
+                        <p>Cloud API pricing makes budgeting difficult</p>
+                    </div>
+                </div>
+                <div class="challenge-item">
+                    <div class="challenge-icon">👥</div>
+                    <div>
+                        <h4>No governance controls</h4>
+                        <p>DIY solutions lack user management and audit trails</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Solution -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="solution-intro">
+                <h2>The Solution</h2>
+                <p>Pre-configured hardware and software bundle delivered as a complete service lease</p>
+            </div>
+            <div class="capabilities-table">
+                <div class="capabilities-row">
+                    <div class="capabilities-label">Hardware</div>
+                    <div class="capabilities-value">Ryzen AI Max+ 395, 128GB RAM, 2TB NVMe - desktop form factor</div>
+                </div>
+                <div class="capabilities-row">
+                    <div class="capabilities-label">Management Console</div>
+                    <div class="capabilities-value">Web-based dashboard for models, users, and system health</div>
+                </div>
+                <div class="capabilities-row">
+                    <div class="capabilities-label">User Management</div>
+                    <div class="capabilities-value">Create accounts with Admin, User, or Viewer roles</div>
+                </div>
+                <div class="capabilities-row">
+                    <div class="capabilities-label">Access Control</div>
+                    <div class="capabilities-value">Role-based permissions - control who can manage vs view</div>
+                </div>
+                <div class="capabilities-row">
+                    <div class="capabilities-label">Audit Logging</div>
+                    <div class="capabilities-value">Complete trail of all administrative actions</div>
+                </div>
+                <div class="capabilities-row">
+                    <div class="capabilities-label">REST API</div>
+                    <div class="capabilities-value">Programmatic access for automation and CI/CD integration</div>
+                </div>
+                <div class="capabilities-row">
+                    <div class="capabilities-label">OpenAI-Compatible API</div>
+                    <div class="capabilities-value">Drop-in replacement for existing code</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enterprise Controls -->
+    <section class="enterprise-controls">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Enterprise Controls</h2>
+                <p class="section-subtitle">Complete governance for your AI infrastructure</p>
+            </div>
+            <div class="controls-grid">
+                <div class="control-category">
+                    <h3>Data Sovereignty</h3>
+                    <ul class="control-list">
+                        <li>
+                            <div>
+                                <strong>Zero data retention</strong>
+                                <span>Conversations, prompts, and model interactions never stored or logged</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>No external reporting</strong>
+                                <span>Zero usage data reported outside your organization</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Air-gap capable</strong>
+                                <span>Operates without internet connectivity</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>100% on-premise</strong>
+                                <span>Data never leaves your network</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="control-category">
+                    <h3>Governance</h3>
+                    <ul class="control-list">
+                        <li>
+                            <div>
+                                <strong>Role-based access control</strong>
+                                <span>Admin, User, and Viewer roles with granular permissions</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Audit logging</strong>
+                                <span>Track who did what and when for compliance requirements</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>User management</strong>
+                                <span>Centralized account administration</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Pre-validated models</strong>
+                                <span>All models tested before deployment</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="control-category">
+                    <h3>Integration</h3>
+                    <ul class="control-list">
+                        <li>
+                            <div>
+                                <strong>REST API</strong>
+                                <span>100+ endpoints for programmatic management</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>OpenAPI documentation</strong>
+                                <span>Interactive API docs at /docs</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>CI/CD ready</strong>
+                                <span>Automate deployments and monitoring</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>OpenAI-compatible</strong>
+                                <span>Works with existing tooling</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competitive Position -->
+    <section class="comparison-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Competitive Position</h2>
+                <p class="section-subtitle">What sets us apart</p>
+            </div>
+            <div class="comparison-table-wrapper">
+                <table class="cto-comparison-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>LLM Appliance</th>
+                            <th>Cloud APIs</th>
+                            <th>DIY (Ollama)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Data Retention</td>
+                            <td class="good">Zero</td>
+                            <td class="bad">Logged</td>
+                            <td class="neutral">Varies</td>
+                        </tr>
+                        <tr>
+                            <td>External Reporting</td>
+                            <td class="good">None</td>
+                            <td class="bad">Yes</td>
+                            <td class="neutral">Varies</td>
+                        </tr>
+                        <tr>
+                            <td>User Management</td>
+                            <td class="good">Built-in</td>
+                            <td class="neutral">Varies</td>
+                            <td class="bad">DIY</td>
+                        </tr>
+                        <tr>
+                            <td>RBAC</td>
+                            <td class="good">Built-in</td>
+                            <td class="neutral">Varies</td>
+                            <td class="bad">DIY</td>
+                        </tr>
+                        <tr>
+                            <td>Audit Logging</td>
+                            <td class="good">Built-in</td>
+                            <td class="neutral">Varies</td>
+                            <td class="bad">DIY</td>
+                        </tr>
+                        <tr>
+                            <td>REST API</td>
+                            <td class="good">Full</td>
+                            <td class="neutral">N/A</td>
+                            <td class="neutral">Basic</td>
+                        </tr>
+                        <tr>
+                            <td>Infrastructure Expertise</td>
+                            <td class="good">Not Required</td>
+                            <td class="neutral">N/A</td>
+                            <td class="bad">Required</td>
+                        </tr>
+                        <tr>
+                            <td>Setup Time</td>
+                            <td class="good">Under 1 hour</td>
+                            <td class="good">Instant</td>
+                            <td class="bad">Weeks</td>
+                        </tr>
+                        <tr>
+                            <td>Enterprise Support</td>
+                            <td class="good">Included</td>
+                            <td class="neutral">Pay extra</td>
+                            <td class="bad">Community</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Summary -->
+    <section class="pricing-summary">
+        <div class="container">
+            <div class="pricing-summary-content">
+                <h2>Pricing</h2>
+                <p style="color: var(--text-secondary);">Simple, predictable pricing with annual contract</p>
+                <div class="price-highlight">$1,000<span>/month per unit</span></div>
+                <div class="pricing-tiers">
+                    <div class="pricing-tier">
+                        <h4>1 Unit</h4>
+                        <div class="tier-price">$12K<span>/year</span></div>
+                        <p>Small team, standard models</p>
+                    </div>
+                    <div class="pricing-tier">
+                        <h4>2 Units (Clustered)</h4>
+                        <div class="tier-price">$24K<span>/year</span></div>
+                        <p>Medium team, larger models</p>
+                    </div>
+                    <div class="pricing-tier">
+                        <h4>4 Units (Max Cluster)</h4>
+                        <div class="tier-price">$48K<span>/year</span></div>
+                        <p>Large team, maximum context</p>
+                    </div>
+                    <div class="pricing-tier">
+                        <h4>Custom Hardware</h4>
+                        <div class="tier-price">Contact</div>
+                        <p>High throughput (GB200, etc.)</p>
+                    </div>
+                </div>
+                <p style="color: var(--text-secondary); margin-top: 1rem;"><strong>Includes:</strong> Hardware, software, warranty, support, pre-validated models.<br><strong>Clustering:</strong> Connect up to 4 desktop units for access to larger models and increased capacity.<br><strong>No usage-based fees. No surprise bills.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Next Steps -->
+    <section class="next-steps">
+        <div class="container">
+            <div class="next-steps-content">
+                <h2>Next Steps</h2>
+                <div class="steps-list">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div>
+                            <h4>Technical Demo</h4>
+                            <p>See the management console, REST API, and user management in action</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div>
+                            <h4>2-Week POC</h4>
+                            <p>Test with your team's actual models and workflows</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div>
+                            <h4>Deploy</h4>
+                            <p>Production-ready in under an hour</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="/#contact" class="btn btn-primary btn-large">Request POC</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <a href="/" class="footer-brand">
+                    <span class="brand-text">LLM Appliance</span>
+                    <span class="brand-subtitle">by Flatiron Networks</span>
+                </a>
+                <div class="footer-links">
+                    <a href="/">Home</a>
+                    <a href="/pricing.html">Pricing</a>
+                    <a href="/security.html">Security</a>
+                    <a href="/#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Flatiron Networks, Inc. All rights reserved.</p>
+                <p class="footer-tagline">Self-Hosted LLM with Zero Data Retention</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

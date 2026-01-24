@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WJ3P3WG5');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X2T46WCDJK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-X2T46WCDJK');
+    </script>
+
+    <!-- Primary Meta Tags -->
+    <title>Pricing - LLM Appliance | $1,000/month per unit</title>
+    <meta name="title" content="Pricing - LLM Appliance | $1,000/month per unit">
+    <meta name="description" content="Simple, predictable pricing for self-hosted LLM. $1,000/month per unit with annual contract. Includes hardware, software, warranty, and support. No usage-based fees.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://llmappliance.com/pricing.html">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        .pricing-hero {
+            padding: 8rem 0 4rem;
+            background: var(--bg-secondary);
+        }
+
+        .pricing-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .pricing-hero .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 4rem 0;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: var(--card-bg);
+            border-radius: 1rem;
+            padding: 2.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--primary-color);
+            position: relative;
+        }
+
+        .pricing-card.featured::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-card .use-case {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-card .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .pricing-card .price span {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .pricing-card .annual {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-card .features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-card .features li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .pricing-card .features li::before {
+            content: '✓';
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .pricing-card .btn {
+            width: 100%;
+            text-align: center;
+        }
+
+        .custom-card {
+            background: var(--bg-secondary);
+        }
+
+        .custom-card .price {
+            font-size: 2rem;
+        }
+
+        .included-section {
+            padding: 4rem 0;
+            background: var(--bg-secondary);
+        }
+
+        .included-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .included-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .included-icon {
+            font-size: 2rem;
+            line-height: 1;
+        }
+
+        .included-item h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        .included-item p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .why-pay-more {
+            padding: 4rem 0;
+        }
+
+        .why-table {
+            max-width: 800px;
+            margin: 2rem auto 0;
+            border-radius: 1rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .why-table-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .why-table-row:last-child {
+            border-bottom: none;
+        }
+
+        .why-table-header {
+            background: var(--bg-dark);
+            color: white;
+            font-weight: 600;
+        }
+
+        .why-table-cell {
+            padding: 1rem 1.5rem;
+            text-align: center;
+        }
+
+        .why-table-row:not(.why-table-header) .why-table-cell:first-child {
+            text-align: left;
+            font-weight: 500;
+        }
+
+        .why-table-cell.good {
+            color: #22c55e;
+        }
+
+        .why-table-cell.bad {
+            color: #ef4444;
+        }
+
+        .premium-message {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .cta-section-pricing {
+            padding: 4rem 0;
+            background: var(--bg-secondary);
+            text-align: center;
+        }
+
+        .cta-section-pricing h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section-pricing p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .pricing-hero h1 {
+                font-size: 2rem;
+            }
+
+            .pricing-card .price {
+                font-size: 2.5rem;
+            }
+
+            .why-table-row {
+                grid-template-columns: 1fr;
+            }
+
+            .why-table-header {
+                display: none;
+            }
+
+            .why-table-cell::before {
+                content: attr(data-label);
+                font-weight: 600;
+                display: block;
+                margin-bottom: 0.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WJ3P3WG5"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="nav-brand">
+                <span class="brand-text">LLM Appliance</span>
+                <span class="brand-subtitle">by Flatiron Networks</span>
+            </a>
+            <div class="nav-links" id="nav-links">
+                <a href="/">Home</a>
+                <a href="/for-ctos.html">For CTOs</a>
+                <a href="/security.html">Security</a>
+                <a href="/#contact" class="cta-button-nav">Request POC</a>
+                <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Pricing Hero -->
+    <section class="pricing-hero">
+        <div class="container">
+            <h1>Simple, Predictable Pricing</h1>
+            <p class="subtitle">$1,000/month per unit with annual contract. No usage-based fees. No surprise bills.</p>
+        </div>
+    </section>
+
+    <!-- Pricing Cards -->
+    <section class="container">
+        <div class="pricing-cards">
+            <div class="pricing-card">
+                <h3>1 Unit</h3>
+                <p class="use-case">Small team, standard models</p>
+                <div class="price">$1,000<span>/month</span></div>
+                <div class="annual">$12,000/year</div>
+                <ul class="features">
+                    <li>Single desktop unit</li>
+                    <li>5-10 concurrent users</li>
+                    <li>Standard model support</li>
+                    <li>Web management console</li>
+                    <li>REST API access</li>
+                    <li>Email support</li>
+                </ul>
+                <a href="/#contact" class="btn btn-secondary">Get Started</a>
+            </div>
+
+            <div class="pricing-card featured">
+                <h3>2 Units (Clustered)</h3>
+                <p class="use-case">Medium team, larger models</p>
+                <div class="price">$2,000<span>/month</span></div>
+                <div class="annual">$24,000/year</div>
+                <ul class="features">
+                    <li>2 desktop units clustered</li>
+                    <li>10-20 concurrent users</li>
+                    <li>Larger model support</li>
+                    <li>Increased context length</li>
+                    <li>Priority support</li>
+                    <li>All enterprise features</li>
+                </ul>
+                <a href="/#contact" class="btn btn-primary">Get Started</a>
+            </div>
+
+            <div class="pricing-card">
+                <h3>4 Units (Max Cluster)</h3>
+                <p class="use-case">Large team, maximum capacity</p>
+                <div class="price">$4,000<span>/month</span></div>
+                <div class="annual">$48,000/year</div>
+                <ul class="features">
+                    <li>4 desktop units clustered</li>
+                    <li>20+ concurrent users</li>
+                    <li>Maximum model capacity</li>
+                    <li>Maximum context length</li>
+                    <li>Priority support (4-hour SLA)</li>
+                    <li>Dedicated account manager</li>
+                </ul>
+                <a href="/#contact" class="btn btn-secondary">Get Started</a>
+            </div>
+
+            <div class="pricing-card custom-card">
+                <h3>Custom Hardware</h3>
+                <p class="use-case">High throughput requirements</p>
+                <div class="price">Contact Us</div>
+                <div class="annual">Enterprise solutions</div>
+                <ul class="features">
+                    <li>GB200 and other high-end GPUs</li>
+                    <li>Unlimited concurrent users</li>
+                    <li>Maximum performance</li>
+                    <li>Custom configurations</li>
+                    <li>Dedicated support team</li>
+                    <li>Custom SLA</li>
+                </ul>
+                <a href="/#contact" class="btn btn-secondary">Contact Sales</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Included -->
+    <section class="included-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Everything Included</h2>
+                <p class="section-subtitle">Complete service bundle with no hidden costs</p>
+            </div>
+            <div class="included-grid">
+                <div class="included-item">
+                    <div class="included-icon">🖥️</div>
+                    <div>
+                        <h4>Hardware</h4>
+                        <p>Pre-configured desktop units with Ryzen AI Max+ 395, 128GB RAM, 2TB NVMe</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-icon">💿</div>
+                    <div>
+                        <h4>Software</h4>
+                        <p>Web management console, REST API, OpenAI-compatible endpoint, all updates</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-icon">✅</div>
+                    <div>
+                        <h4>Pre-Validated Models</h4>
+                        <p>All models tested and validated before deployment</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-icon">🔧</div>
+                    <div>
+                        <h4>Warranty</h4>
+                        <p>Full hardware warranty included for the duration of your contract</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-icon">📞</div>
+                    <div>
+                        <h4>Support</h4>
+                        <p>Enterprise support with SLA-backed response times</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-icon">👥</div>
+                    <div>
+                        <h4>Enterprise Controls</h4>
+                        <p>User management, RBAC, and audit logging built-in</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Pay More Than Cloud -->
+    <section class="why-pay-more">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Pay More Than Cloud?</h2>
+                <p class="section-subtitle">What cloud APIs cannot provide</p>
+            </div>
+            <div class="why-table">
+                <div class="why-table-row why-table-header">
+                    <div class="why-table-cell">Concern</div>
+                    <div class="why-table-cell">Cloud APIs</div>
+                    <div class="why-table-cell">LLM Appliance</div>
+                </div>
+                <div class="why-table-row">
+                    <div class="why-table-cell" data-label="Concern">Data Location</div>
+                    <div class="why-table-cell bad" data-label="Cloud APIs">Vendor servers</div>
+                    <div class="why-table-cell good" data-label="LLM Appliance">Your premises</div>
+                </div>
+                <div class="why-table-row">
+                    <div class="why-table-cell" data-label="Concern">Data Retention</div>
+                    <div class="why-table-cell bad" data-label="Cloud APIs">Logged for training</div>
+                    <div class="why-table-cell good" data-label="LLM Appliance">Zero - never stored</div>
+                </div>
+                <div class="why-table-row">
+                    <div class="why-table-cell" data-label="Concern">Usage Reporting</div>
+                    <div class="why-table-cell bad" data-label="Cloud APIs">Reported to vendor</div>
+                    <div class="why-table-cell good" data-label="LLM Appliance">None - complete privacy</div>
+                </div>
+                <div class="why-table-row">
+                    <div class="why-table-cell" data-label="Concern">Compliance</div>
+                    <div class="why-table-cell bad" data-label="Cloud APIs">Depends on vendor</div>
+                    <div class="why-table-cell good" data-label="LLM Appliance">You control everything</div>
+                </div>
+                <div class="why-table-row">
+                    <div class="why-table-cell" data-label="Concern">Air-Gap Support</div>
+                    <div class="why-table-cell bad" data-label="Cloud APIs">Impossible</div>
+                    <div class="why-table-cell good" data-label="LLM Appliance">Fully supported</div>
+                </div>
+                <div class="why-table-row">
+                    <div class="why-table-cell" data-label="Concern">Vendor Access</div>
+                    <div class="why-table-cell bad" data-label="Cloud APIs">Yes</div>
+                    <div class="why-table-cell good" data-label="LLM Appliance">None</div>
+                </div>
+            </div>
+            <p class="premium-message">The premium is the price of data sovereignty.</p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section-pricing">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Request a 2-week proof of concept. No commitment required.</p>
+            <a href="/#contact" class="btn btn-primary btn-large">Request POC</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <a href="/" class="footer-brand">
+                    <span class="brand-text">LLM Appliance</span>
+                    <span class="brand-subtitle">by Flatiron Networks</span>
+                </a>
+                <div class="footer-links">
+                    <a href="/">Home</a>
+                    <a href="/for-ctos.html">For CTOs</a>
+                    <a href="/security.html">Security</a>
+                    <a href="/#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Flatiron Networks, Inc. All rights reserved.</p>
+                <p class="footer-tagline">Self-Hosted LLM with Zero Data Retention</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

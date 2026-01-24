@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WJ3P3WG5');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X2T46WCDJK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-X2T46WCDJK');
+    </script>
+
+    <!-- Primary Meta Tags -->
+    <title>Security & Compliance - LLM Appliance | Zero Data Retention</title>
+    <meta name="title" content="Security & Compliance - LLM Appliance | Zero Data Retention">
+    <meta name="description" content="Complete data sovereignty for your AI infrastructure. Zero data retention, no external reporting, air-gap capable, RBAC, and comprehensive audit logging.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://llmappliance.com/security.html">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        .security-hero {
+            padding: 8rem 0 4rem;
+            background: var(--bg-secondary);
+            text-align: center;
+        }
+
+        .security-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .security-hero .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .security-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .security-stat {
+            text-align: center;
+        }
+
+        .security-stat .number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+        }
+
+        .security-stat .label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .core-principles {
+            padding: 4rem 0;
+        }
+
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .principle-card {
+            background: var(--card-bg);
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .principle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .principle-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .principle-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .principle-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .principle-card .detail {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        .vs-cloud {
+            padding: 4rem 0;
+            background: var(--bg-secondary);
+        }
+
+        .vs-table {
+            max-width: 900px;
+            margin: 2rem auto 0;
+            border-radius: 1rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: var(--card-bg);
+        }
+
+        .vs-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .vs-row:last-child {
+            border-bottom: none;
+        }
+
+        .vs-header {
+            background: var(--bg-dark);
+            color: white;
+            font-weight: 600;
+        }
+
+        .vs-cell {
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .vs-row:not(.vs-header) .vs-cell:first-child {
+            font-weight: 500;
+        }
+
+        .vs-cell.center {
+            justify-content: center;
+            text-align: center;
+        }
+
+        .vs-good {
+            color: #22c55e;
+        }
+
+        .vs-bad {
+            color: #ef4444;
+        }
+
+        .access-controls {
+            padding: 4rem 0;
+        }
+
+        .controls-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .controls-text h2 {
+            margin-bottom: 1rem;
+        }
+
+        .controls-text p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .roles-list {
+            list-style: none;
+        }
+
+        .role-item {
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .role-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .role-item p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .audit-preview {
+            background: var(--bg-dark);
+            border-radius: 1rem;
+            padding: 2rem;
+            color: #e0e0e0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            overflow-x: auto;
+        }
+
+        .audit-preview .timestamp {
+            color: #999;
+        }
+
+        .audit-preview .action {
+            color: #3a9de8;
+        }
+
+        .audit-preview .user {
+            color: #22c55e;
+        }
+
+        .audit-line {
+            margin-bottom: 0.5rem;
+        }
+
+        .compliance-section {
+            padding: 4rem 0;
+            background: var(--bg-secondary);
+        }
+
+        .compliance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .compliance-card {
+            background: var(--card-bg);
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .compliance-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .compliance-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .compliance-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .air-gap-section {
+            padding: 4rem 0;
+        }
+
+        .air-gap-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .air-gap-content h2 {
+            margin-bottom: 1rem;
+        }
+
+        .air-gap-content > p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .air-gap-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            text-align: left;
+        }
+
+        .air-gap-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .air-gap-feature .check {
+            color: var(--primary-color);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .air-gap-feature p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .cta-security {
+            padding: 4rem 0;
+            background: var(--bg-secondary);
+            text-align: center;
+        }
+
+        .cta-security h2 {
+            margin-bottom: 1rem;
+        }
+
+        .cta-security p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .security-hero h1 {
+                font-size: 2rem;
+            }
+
+            .security-stats {
+                gap: 2rem;
+            }
+
+            .security-stat .number {
+                font-size: 2rem;
+            }
+
+            .controls-content {
+                grid-template-columns: 1fr;
+            }
+
+            .vs-row {
+                grid-template-columns: 1fr;
+            }
+
+            .vs-header {
+                display: none;
+            }
+
+            .vs-cell::before {
+                content: attr(data-label);
+                font-weight: 600;
+                display: block;
+                margin-bottom: 0.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WJ3P3WG5"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="nav-brand">
+                <span class="brand-text">LLM Appliance</span>
+                <span class="brand-subtitle">by Flatiron Networks</span>
+            </a>
+            <div class="nav-links" id="nav-links">
+                <a href="/">Home</a>
+                <a href="/for-ctos.html">For CTOs</a>
+                <a href="/pricing.html">Pricing</a>
+                <a href="/#contact" class="cta-button-nav">Request POC</a>
+                <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="security-hero">
+        <div class="container">
+            <h1>Security & Compliance</h1>
+            <p class="subtitle">Complete data sovereignty for your AI infrastructure. Zero data retention, no external reporting, comprehensive audit logging.</p>
+            <div class="security-stats">
+                <div class="security-stat">
+                    <div class="number">0%</div>
+                    <div class="label">Data Retention</div>
+                </div>
+                <div class="security-stat">
+                    <div class="number">0</div>
+                    <div class="label">External Reports</div>
+                </div>
+                <div class="security-stat">
+                    <div class="number">100%</div>
+                    <div class="label">On-Premise</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Security Principles -->
+    <section class="core-principles">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Core Security Principles</h2>
+                <p class="section-subtitle">Built from the ground up for data sovereignty</p>
+            </div>
+            <div class="principles-grid">
+                <div class="principle-card">
+                    <div class="principle-icon">🔐</div>
+                    <h3>Zero Data Retention</h3>
+                    <p>Conversations, prompts, and model interactions are never stored or logged. All inference happens in memory with no persistent storage.</p>
+                    <div class="detail">No conversation history. No prompt logs. No model interaction records.</div>
+                </div>
+                <div class="principle-card">
+                    <div class="principle-icon">🚫</div>
+                    <h3>No External Reporting</h3>
+                    <p>Zero usage data is reported outside your organization. Complete privacy with no telemetry, analytics, or usage tracking.</p>
+                    <div class="detail">No phone-home. No metrics sent. No usage analytics collected.</div>
+                </div>
+                <div class="principle-card">
+                    <div class="principle-icon">🏢</div>
+                    <h3>100% On-Premise</h3>
+                    <p>All data stays within your network. No cloud dependencies. Complete control over your AI infrastructure.</p>
+                    <div class="detail">Your hardware. Your network. Your data.</div>
+                </div>
+                <div class="principle-card">
+                    <div class="principle-icon">🔌</div>
+                    <h3>Air-Gap Capable</h3>
+                    <p>Operates without internet connectivity. Perfect for classified environments and maximum security requirements.</p>
+                    <div class="detail">No internet required for operation. Full functionality offline.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cloud Comparison -->
+    <section class="vs-cloud">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Cloud AI Security Comparison</h2>
+                <p class="section-subtitle">What happens to your data with cloud APIs vs LLM Appliance</p>
+            </div>
+            <div class="vs-table">
+                <div class="vs-row vs-header">
+                    <div class="vs-cell">Security Concern</div>
+                    <div class="vs-cell center">Cloud APIs</div>
+                    <div class="vs-cell center">LLM Appliance</div>
+                </div>
+                <div class="vs-row">
+                    <div class="vs-cell" data-label="Concern">Where does your data go?</div>
+                    <div class="vs-cell center vs-bad" data-label="Cloud APIs">Vendor servers</div>
+                    <div class="vs-cell center vs-good" data-label="LLM Appliance">Stays on your premises</div>
+                </div>
+                <div class="vs-row">
+                    <div class="vs-cell" data-label="Concern">Are prompts logged?</div>
+                    <div class="vs-cell center vs-bad" data-label="Cloud APIs">Yes, for training/improvement</div>
+                    <div class="vs-cell center vs-good" data-label="LLM Appliance">Never stored or logged</div>
+                </div>
+                <div class="vs-row">
+                    <div class="vs-cell" data-label="Concern">Is usage tracked?</div>
+                    <div class="vs-cell center vs-bad" data-label="Cloud APIs">Yes, reported to vendor</div>
+                    <div class="vs-cell center vs-good" data-label="LLM Appliance">No external reporting</div>
+                </div>
+                <div class="vs-row">
+                    <div class="vs-cell" data-label="Concern">Can vendor access your data?</div>
+                    <div class="vs-cell center vs-bad" data-label="Cloud APIs">Yes</div>
+                    <div class="vs-cell center vs-good" data-label="LLM Appliance">No vendor access</div>
+                </div>
+                <div class="vs-row">
+                    <div class="vs-cell" data-label="Concern">Who controls compliance?</div>
+                    <div class="vs-cell center vs-bad" data-label="Cloud APIs">Depends on vendor BAA</div>
+                    <div class="vs-cell center vs-good" data-label="LLM Appliance">You control everything</div>
+                </div>
+                <div class="vs-row">
+                    <div class="vs-cell" data-label="Concern">Air-gap deployment?</div>
+                    <div class="vs-cell center vs-bad" data-label="Cloud APIs">Impossible</div>
+                    <div class="vs-cell center vs-good" data-label="LLM Appliance">Fully supported</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Access Controls -->
+    <section class="access-controls">
+        <div class="container">
+            <div class="controls-content">
+                <div class="controls-text">
+                    <h2>Enterprise Access Controls</h2>
+                    <p>Complete governance over who can access and manage your AI infrastructure with role-based access control and comprehensive audit logging.</p>
+                    <ul class="roles-list">
+                        <li class="role-item">
+                            <h4>Admin</h4>
+                            <p>Full system access. Manage users, deploy models, configure settings, view all logs.</p>
+                        </li>
+                        <li class="role-item">
+                            <h4>User</h4>
+                            <p>Operational access. Use models, view status, access assigned resources.</p>
+                        </li>
+                        <li class="role-item">
+                            <h4>Viewer</h4>
+                            <p>Read-only access. View system status, monitor performance, no modifications.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="audit-preview">
+                    <div class="audit-line"><span class="timestamp">[2026-01-23 10:23:45]</span> <span class="user">admin@company.com</span> <span class="action">deployed_model</span> llama-3.3-70b</div>
+                    <div class="audit-line"><span class="timestamp">[2026-01-23 10:24:12]</span> <span class="user">admin@company.com</span> <span class="action">started_server</span> with model llama-3.3-70b</div>
+                    <div class="audit-line"><span class="timestamp">[2026-01-23 11:15:33]</span> <span class="user">admin@company.com</span> <span class="action">created_user</span> developer@company.com (role: User)</div>
+                    <div class="audit-line"><span class="timestamp">[2026-01-23 14:02:18]</span> <span class="user">developer@company.com</span> <span class="action">logged_in</span> from 10.0.1.45</div>
+                    <div class="audit-line"><span class="timestamp">[2026-01-23 14:45:22]</span> <span class="user">admin@company.com</span> <span class="action">updated_permissions</span> developer@company.com</div>
+                    <div class="audit-line"><span class="timestamp">[2026-01-23 16:30:00]</span> <span class="user">admin@company.com</span> <span class="action">generated_diagnostic</span> bundle-2026-01-23.zip</div>
+                    <p style="margin-top: 1rem; color: #666; font-size: 0.8rem;">Complete audit trail of all administrative actions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compliance Ready -->
+    <section class="compliance-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Compliance Ready</h2>
+                <p class="section-subtitle">Built for regulated industries</p>
+            </div>
+            <div class="compliance-grid">
+                <div class="compliance-card">
+                    <div class="compliance-icon">🏥</div>
+                    <h3>Healthcare</h3>
+                    <p>Zero data retention means patient data never leaves your network. Complete privacy for HIPAA environments.</p>
+                </div>
+                <div class="compliance-card">
+                    <div class="compliance-icon">💼</div>
+                    <h3>Financial Services</h3>
+                    <p>Full audit logging and RBAC for regulatory compliance. No external reporting of trading or client data.</p>
+                </div>
+                <div class="compliance-card">
+                    <div class="compliance-icon">🏛️</div>
+                    <h3>Government</h3>
+                    <p>Air-gap capable for classified environments. 100% on-premise with no cloud dependencies.</p>
+                </div>
+                <div class="compliance-card">
+                    <div class="compliance-icon">⚖️</div>
+                    <h3>Legal</h3>
+                    <p>Attorney-client privilege protected. No prompts or conversations ever stored or logged.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Air-Gap Deployment -->
+    <section class="air-gap-section">
+        <div class="container">
+            <div class="air-gap-content">
+                <h2>Air-Gap Deployment</h2>
+                <p>For maximum security environments, LLM Appliance operates completely without internet connectivity.</p>
+                <div class="air-gap-features">
+                    <div class="air-gap-feature">
+                        <span class="check">✓</span>
+                        <div>
+                            <strong>No internet required</strong>
+                            <p>Full functionality without any external connections</p>
+                        </div>
+                    </div>
+                    <div class="air-gap-feature">
+                        <span class="check">✓</span>
+                        <div>
+                            <strong>Offline model deployment</strong>
+                            <p>Pre-load models via secure transfer</p>
+                        </div>
+                    </div>
+                    <div class="air-gap-feature">
+                        <span class="check">✓</span>
+                        <div>
+                            <strong>Local updates</strong>
+                            <p>System updates via secure offline packages</p>
+                        </div>
+                    </div>
+                    <div class="air-gap-feature">
+                        <span class="check">✓</span>
+                        <div>
+                            <strong>Classified environments</strong>
+                            <p>Suitable for SCIF and other secure facilities</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-security">
+        <div class="container">
+            <h2>Ready for Complete Data Sovereignty?</h2>
+            <p>Request a 2-week proof of concept. Test with your security team.</p>
+            <a href="/#contact" class="btn btn-primary btn-large">Request POC</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <a href="/" class="footer-brand">
+                    <span class="brand-text">LLM Appliance</span>
+                    <span class="brand-subtitle">by Flatiron Networks</span>
+                </a>
+                <div class="footer-links">
+                    <a href="/">Home</a>
+                    <a href="/for-ctos.html">For CTOs</a>
+                    <a href="/pricing.html">Pricing</a>
+                    <a href="/#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Flatiron Networks, Inc. All rights reserved.</p>
+                <p class="footer-tagline">Self-Hosted LLM with Zero Data Retention</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
