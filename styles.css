@@ -794,6 +794,9 @@ body {
     border: 2px solid var(--border-color);
     transition: all 0.3s ease;
     text-align: center;
+    text-decoration: none;
+    display: block;
+    color: inherit;
 }
 
 .use-case-card:hover {
