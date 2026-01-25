@@ -221,7 +221,7 @@ if (contactForm) {
         submitBtn.textContent = 'Sending...';
 
         try {
-            const response = await fetch('https://llm-appliance-form-handler.flatironnetworks.workers.dev', {
+            const response = await fetch('https://form-handler.flatironnetworks.workers.dev', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
