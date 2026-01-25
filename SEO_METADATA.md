@@ -157,7 +157,7 @@ The metadata targets these key search terms:
 - On-premise AI
 - Zero data retention
 - Data sovereignty
-- HIPAA compliant AI
+- HIPAA-ready AI
 - Enterprise LLM
 - Private AI
 - Secure AI
