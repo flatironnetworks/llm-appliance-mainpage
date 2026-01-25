@@ -91,7 +91,7 @@
         }
 
         .principle-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-4px);
             box-shadow: var(--shadow-xl);
         }
 
@@ -162,11 +162,11 @@
         }
 
         .vs-good {
-            color: #22c55e;
+            color: var(--success-color);
         }
 
         .vs-bad {
-            color: #ef4444;
+            color: var(--error-color);
         }
 
         .access-controls {
@@ -212,25 +212,25 @@
         }
 
         .audit-preview {
-            background: var(--bg-dark);
+            background: var(--code-bg);
             border-radius: 1rem;
             padding: 2rem;
-            color: #e0e0e0;
-            font-family: 'Courier New', monospace;
+            color: var(--code-text);
+            font-family: var(--font-code);
             font-size: 0.85rem;
             overflow-x: auto;
         }
 
         .audit-preview .timestamp {
-            color: #999;
+            color: var(--text-muted);
         }
 
         .audit-preview .action {
-            color: #3a9de8;
+            color: var(--primary-light);
         }
 
         .audit-preview .user {
-            color: #22c55e;
+            color: var(--success-color);
         }
 
         .audit-line {
@@ -541,7 +541,7 @@
                     <div class="audit-line"><span class="timestamp">[2026-01-23 14:02:18]</span> <span class="user">developer@company.com</span> <span class="action">logged_in</span> from 10.0.1.45</div>
                     <div class="audit-line"><span class="timestamp">[2026-01-23 14:45:22]</span> <span class="user">admin@company.com</span> <span class="action">updated_permissions</span> developer@company.com</div>
                     <div class="audit-line"><span class="timestamp">[2026-01-23 16:30:00]</span> <span class="user">admin@company.com</span> <span class="action">generated_diagnostic</span> bundle-2026-01-23.zip</div>
-                    <p style="margin-top: 1rem; color: #666; font-size: 0.8rem;">Complete audit trail of all administrative actions</p>
+                    <p style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.8rem;">Complete audit trail of all administrative actions</p>
                 </div>
             </div>
         </div>

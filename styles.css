@@ -49,6 +49,22 @@
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
     --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+    /* Status Colors */
+    --success-color: #22c55e;
+    --success-light: rgba(34, 197, 94, 0.1);
+    --error-color: #ef4444;
+    --error-light: rgba(239, 68, 68, 0.1);
+    --text-muted: #999999;
+
+    /* Code/Monospace Font */
+    --font-code: 'Fira Code', 'Monaco', 'Courier New', monospace;
+    --code-bg: #1e1e1e;
+    --code-text: #d4d4d4;
+    --code-comment: #6a9955;
+    --code-keyword: #569cd6;
+    --code-string: #ce9178;
+    --code-function: #dcdcaa;
 }
 
 /* Dark Mode */
@@ -80,6 +96,17 @@
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+
+    /* Status Colors - Dark Mode */
+    --success-color: #4ade80;
+    --success-light: rgba(74, 222, 128, 0.15);
+    --error-color: #f87171;
+    --error-light: rgba(248, 113, 113, 0.15);
+    --text-muted: #888888;
+
+    /* Code - Dark Mode (slightly lighter for contrast) */
+    --code-bg: #1e1e1e;
+    --code-text: #e0e0e0;
 }
 
 html {

@@ -73,7 +73,7 @@
         }
 
         .api-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-4px);
             box-shadow: var(--shadow-xl);
         }
 
@@ -114,7 +114,7 @@
         }
 
         .code-block {
-            background: #1e1e1e;
+            background: var(--code-bg);
             border-radius: 1rem;
             padding: 1.5rem;
             overflow-x: auto;
@@ -123,26 +123,26 @@
 
         .code-block pre {
             margin: 0;
-            color: #d4d4d4;
-            font-family: 'Fira Code', 'Monaco', 'Courier New', monospace;
+            color: var(--code-text);
+            font-family: var(--font-code);
             font-size: 0.9rem;
             line-height: 1.6;
         }
 
         .code-block .comment {
-            color: #6a9955;
+            color: var(--code-comment);
         }
 
         .code-block .keyword {
-            color: #569cd6;
+            color: var(--code-keyword);
         }
 
         .code-block .string {
-            color: #ce9178;
+            color: var(--code-string);
         }
 
         .code-block .function {
-            color: #dcdcaa;
+            color: var(--code-function);
         }
 
         .code-label {
@@ -246,7 +246,7 @@
         }
 
         .model-item .check {
-            color: #22c55e;
+            color: var(--success-color);
             font-weight: 700;
             font-size: 1.25rem;
         }
