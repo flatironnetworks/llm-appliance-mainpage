@@ -20,9 +20,9 @@
     </script>
 
     <!-- Primary Meta Tags -->
-    <title>Contact Us - LLM Appliance | Request a POC</title>
-    <meta name="title" content="Contact Us - LLM Appliance | Request a POC">
-    <meta name="description" content="Request a 2-week proof of concept for LLM Appliance. Self-hosted LLM with zero data retention. Contact our team to discuss your on-premise AI needs.">
+    <title>Contact Us - LLM Appliance</title>
+    <meta name="title" content="Contact Us - LLM Appliance">
+    <meta name="description" content="Contact the LLM Appliance team. Request a demo, get pricing information, or ask questions about our self-hosted LLM solution.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://llmappliance.com/contact.html">
 
@@ -155,7 +155,7 @@
                 <a href="/platform-overview.html">Platform Overview</a>
                 <a href="/security.html">Security</a>
                 <a href="/pricing.html">Pricing</a>
-                <a href="/contact.html" class="cta-button-nav">Request POC</a>
+                <a href="/contact.html" class="cta-button-nav">Contact Us</a>
                 <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
                     <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -176,8 +176,8 @@
     <!-- Hero -->
     <section class="contact-hero">
         <div class="container">
-            <h1>Request a POC</h1>
-            <p class="subtitle">Get started with a 2-week proof of concept. No commitment required. Our team will help you evaluate LLM Appliance for your organization.</p>
+            <h1>Contact Us</h1>
+            <p class="subtitle">Have questions or ready to get started? Our team is here to help you explore how LLM Appliance can work for your organization.</p>
         </div>
     </section>
 
@@ -186,35 +186,35 @@
         <div class="container">
             <div class="contact-container">
                 <div class="contact-info">
-                    <h2>What to Expect</h2>
-                    <p>Our team will work with you to understand your requirements and set up a proof of concept tailored to your needs.</p>
+                    <h2>Why LLM Appliance?</h2>
+                    <p>Enterprise-grade AI that stays on your infrastructure. Here's what sets us apart.</p>
                     <ul class="contact-benefits">
                         <li>
                             <span class="check">✓</span>
                             <div>
-                                <strong>2-Week Evaluation Period</strong>
-                                <p>Full access to test with your team and use cases</p>
+                                <strong>Complete Data Sovereignty</strong>
+                                <p>Your data never leaves your network</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="check">✓</span>
+                            <div>
+                                <strong>Zero Data Retention</strong>
+                                <p>No prompts or responses stored anywhere</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="check">✓</span>
+                            <div>
+                                <strong>Free 2-Week POC</strong>
+                                <p>Test with your team before committing</p>
                             </div>
                         </li>
                         <li>
                             <span class="check">✓</span>
                             <div>
                                 <strong>Dedicated Support</strong>
-                                <p>Direct access to our engineering team during the POC</p>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="check">✓</span>
-                            <div>
-                                <strong>No Commitment Required</strong>
-                                <p>Evaluate with zero obligation to purchase</p>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="check">✓</span>
-                            <div>
-                                <strong>Custom Configuration</strong>
-                                <p>We'll help configure for your specific requirements</p>
+                                <p>Direct access to our engineering team</p>
                             </div>
                         </li>
                     </ul>
@@ -242,7 +242,16 @@
                             </div>
                         </div>
                         <div class="form-group full-width">
-                            <label for="message">Tell us about your use case</label>
+                            <label for="request_type">How can we help?</label>
+                            <select id="request_type" name="request_type" required>
+                                <option value="">Select an option</option>
+                                <option value="demo">Request a Demo/POC</option>
+                                <option value="pricing">Sales & Pricing</option>
+                                <option value="general">General Inquiry</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="message">Tell us more</label>
                             <textarea id="message" name="message" rows="4" required></textarea>
                         </div>
                         <div class="turnstile-container">

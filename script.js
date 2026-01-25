@@ -210,6 +210,7 @@ if (contactForm) {
             email: document.getElementById('email').value,
             company: document.getElementById('company').value,
             role: document.getElementById('role').value,
+            request_type: document.getElementById('request_type').value,
             message: document.getElementById('message').value,
             'cf-turnstile-response': token
         };
