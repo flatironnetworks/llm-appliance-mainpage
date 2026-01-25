@@ -142,9 +142,6 @@
         }
 
         .use-cases-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
             margin-top: 2rem;
         }
 
@@ -369,7 +366,7 @@
                 <h2 class="section-title">Financial Services Use Cases</h2>
                 <p class="section-subtitle">How financial institutions use LLM Appliance</p>
             </div>
-            <div class="use-cases-list">
+            <div class="use-cases-list grid-3">
                 <div class="use-case-item">
                     <span class="number">1</span>
                     <div>
@@ -403,6 +400,13 @@
                     <div>
                         <h3>Report Drafting & Editing</h3>
                         <p>Draft and edit internal reports, memos, and client communications with AI assistance.</p>
+                    </div>
+                </div>
+                <div class="use-case-item">
+                    <span class="number">6</span>
+                    <div>
+                        <h3>Fraud Detection Analysis</h3>
+                        <p>Analyze transaction patterns and flag potential fraud without exposing sensitive customer financial data.</p>
                     </div>
                 </div>
             </div>
