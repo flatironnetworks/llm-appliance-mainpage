@@ -53,9 +53,6 @@
         }
 
         .pricing-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
             padding: 4rem 0;
             max-width: 1000px;
             margin: 0 auto;
@@ -160,22 +157,7 @@
         }
 
         .included-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
             margin-top: 2rem;
-        }
-
-        @media (max-width: 1024px) {
-            .included-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 600px) {
-            .included-grid {
-                grid-template-columns: 1fr;
-            }
         }
 
         .included-item {
@@ -351,7 +333,7 @@
 
     <!-- Pricing Cards -->
     <section class="container">
-        <div class="pricing-cards">
+        <div class="pricing-cards grid-4">
             <div class="pricing-card">
                 <h3>1 Unit</h3>
                 <p class="use-case">Small team, standard models</p>
@@ -425,7 +407,7 @@
                 <h2 class="section-title">Everything Included</h2>
                 <p class="section-subtitle">Complete service bundle with no hidden costs</p>
             </div>
-            <div class="included-grid">
+            <div class="included-grid grid-3">
                 <div class="included-item">
                     <div class="included-icon">🖥️</div>
                     <div>

@@ -61,16 +61,7 @@
         }
 
         .api-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
             margin-top: 2rem;
-        }
-
-        @media (max-width: 900px) {
-            .api-grid {
-                grid-template-columns: 1fr;
-            }
         }
 
         .api-card {
@@ -166,9 +157,6 @@
         }
 
         .performance-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
             margin-top: 2rem;
         }
 
@@ -204,9 +192,6 @@
         }
 
         .integration-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
             margin-top: 2rem;
         }
 
@@ -367,7 +352,7 @@
                 <h2 class="section-title">API Overview</h2>
                 <p class="section-subtitle">Complete developer experience for seamless integration</p>
             </div>
-            <div class="api-grid">
+            <div class="api-grid grid-2">
                 <div class="api-card">
                     <div class="icon">🔌</div>
                     <h3>OpenAI-Compatible Endpoint</h3>
@@ -439,7 +424,7 @@ response = client.chat.completions.<span class="function">create</span>(
                 <h2 class="section-title">Performance</h2>
                 <p class="section-subtitle">LAN speed, unlimited usage</p>
             </div>
-            <div class="performance-grid">
+            <div class="performance-grid grid-4">
                 <div class="performance-stat">
                     <div class="number">1-5ms</div>
                     <div class="label">LAN Latency</div>
@@ -471,7 +456,7 @@ response = client.chat.completions.<span class="function">create</span>(
                 <h2 class="section-title">Integration Examples</h2>
                 <p class="section-subtitle">Works with your existing tools</p>
             </div>
-            <div class="integration-grid">
+            <div class="integration-grid grid-2">
                 <div class="integration-card">
                     <h3><span class="icon">🐍</span> Python / OpenAI SDK</h3>
                     <div class="code-inline">base_url="http://llm-appliance.local/v1"</div>

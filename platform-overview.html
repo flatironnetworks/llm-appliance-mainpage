@@ -149,16 +149,7 @@
         }
 
         .controls-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
             margin-top: 2rem;
-        }
-
-        @media (max-width: 900px) {
-            .controls-grid {
-                grid-template-columns: 1fr;
-            }
         }
 
         .control-category {
@@ -283,9 +274,6 @@
         }
 
         .pricing-tiers {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
             margin: 2rem 0;
         }
 
@@ -526,7 +514,7 @@
                 <h2 class="section-title">Enterprise Controls</h2>
                 <p class="section-subtitle">Complete governance for your AI infrastructure</p>
             </div>
-            <div class="controls-grid">
+            <div class="controls-grid grid-2">
                 <div class="control-category">
                     <h3>Data Sovereignty</h3>
                     <ul class="control-list">
@@ -732,7 +720,7 @@
                 <h2>Pricing</h2>
                 <p style="color: var(--text-secondary);">Simple, predictable pricing with annual contract</p>
                 <div class="price-highlight">$1,000<span>/month per unit</span></div>
-                <div class="pricing-tiers">
+                <div class="pricing-tiers grid-4">
                     <div class="pricing-tier">
                         <h4>1 Unit</h4>
                         <div class="tier-price">$12K<span>/year</span></div>
