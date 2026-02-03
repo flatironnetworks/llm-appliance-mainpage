@@ -1,12 +1,17 @@
 /**
  * Cloudflare Worker for LLM Appliance Contact Form
- * 
- * Deploy this worker in your Cloudflare dashboard:
- * 1. Go to Workers & Pages → Create → Worker
- * 2. Paste this code
- * 3. Add environment variables (see below)
- * 4. Deploy and copy the worker URL
- * 5. Update the fetch URL in script.js
+ *
+ * Creates leads directly in Odoo via JSON-RPC API
+ *
+ * Environment Variables (wrangler.toml):
+ *   ODOO_URL - Odoo instance URL
+ *   ODOO_DATABASE - Odoo database name
+ *
+ * Secrets (wrangler secret put):
+ *   ODOO_API_USER - Odoo username
+ *   ODOO_API_PASSWORD - Odoo password
+ *   TURNSTILE_SECRET_KEY - Cloudflare Turnstile secret
+ *   WEBHOOK_URL - (optional) Slack/Discord webhook
  */
 
 export default {
@@ -15,69 +20,38 @@ export default {
     if (request.method === 'OPTIONS') {
       return new Response(null, {
         status: 204,
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'POST, OPTIONS',
-          'Access-Control-Allow-Headers': 'Content-Type',
-          'Access-Control-Max-Age': '86400',
-        },
+        headers: corsHeaders(),
       });
     }
 
     // Only allow POST requests
     if (request.method !== 'POST') {
-      return new Response('Method not allowed', { 
+      return new Response('Method not allowed', {
         status: 405,
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-        },
+        headers: corsHeaders(),
       });
     }
 
     try {
       // Parse the form data
       const data = await request.json();
-      
+
       // Validate required fields
       if (!data.name || !data.email || !data.request_type || !data.message) {
-        return new Response(
-          JSON.stringify({ error: 'Missing required fields' }), 
-          { 
-            status: 400,
-            headers: {
-              'Content-Type': 'application/json',
-              'Access-Control-Allow-Origin': '*',
-              'Access-Control-Allow-Methods': 'POST, OPTIONS',
-              'Access-Control-Allow-Headers': 'Content-Type',
-            },
-          }
-        );
+        return jsonResponse({ error: 'Missing required fields' }, 400);
       }
 
       // Validate email format
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(data.email)) {
-        return new Response(
-          JSON.stringify({ error: 'Invalid email format' }), 
-          { 
-            status: 400,
-            headers: {
-              'Content-Type': 'application/json',
-              'Access-Control-Allow-Origin': '*',
-              'Access-Control-Allow-Methods': 'POST, OPTIONS',
-              'Access-Control-Allow-Headers': 'Content-Type',
-            },
-          }
-        );
+        return jsonResponse({ error: 'Invalid email format' }, 400);
       }
 
       // Verify Turnstile token
       if (data['cf-turnstile-response']) {
         const turnstileResponse = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             secret: env.TURNSTILE_SECRET_KEY,
             response: data['cf-turnstile-response'],
@@ -86,121 +60,55 @@ export default {
         });
 
         const turnstileResult = await turnstileResponse.json();
-        
         if (!turnstileResult.success) {
-          return new Response(
-            JSON.stringify({ error: 'Turnstile verification failed' }), 
-            { 
-              status: 400,
-              headers: {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods': 'POST, OPTIONS',
-                'Access-Control-Allow-Headers': 'Content-Type',
-              },
-            }
-          );
+          return jsonResponse({ error: 'Turnstile verification failed' }, 400);
         }
       } else {
-        return new Response(
-          JSON.stringify({ error: 'Turnstile token missing' }), 
-          { 
-            status: 400,
-            headers: {
-              'Content-Type': 'application/json',
-              'Access-Control-Allow-Origin': '*',
-              'Access-Control-Allow-Methods': 'POST, OPTIONS',
-              'Access-Control-Allow-Headers': 'Content-Type',
-            },
-          }
-        );
+        return jsonResponse({ error: 'Turnstile token missing' }, 400);
       }
 
-      // Send email via internal SMTP relay (behind Cloudflare Zero Trust)
+      // Create lead in Odoo
       try {
-        const relayUrl = env.SMTP_RELAY_URL || 'https://smtp-relay.llmappliance.net/send';
-
-        // Build request headers
-        const headers = {
-          'Content-Type': 'application/json',
-        };
-
-        // Add CF Access Service Token if configured
-        if (env.CF_ACCESS_CLIENT_ID && env.CF_ACCESS_CLIENT_SECRET) {
-          headers['CF-Access-Client-Id'] = env.CF_ACCESS_CLIENT_ID;
-          headers['CF-Access-Client-Secret'] = env.CF_ACCESS_CLIENT_SECRET;
-        }
-
-        // Add API secret if configured (backup auth layer)
-        if (env.RELAY_API_SECRET) {
-          headers['X-API-Secret'] = env.RELAY_API_SECRET;
-        }
-
-        const requestTypeLabel = getRequestTypeLabel(data.request_type);
-        const emailResponse = await fetch(relayUrl, {
-          method: 'POST',
-          headers,
-          body: JSON.stringify({
-            to: env.NOTIFICATION_EMAIL || 'contact@llmappliance.com',
-            from_email: env.FROM_EMAIL || 'noreply@llmappliance.com',
-            from_name: 'LLM Appliance Contact Form',
-            reply_to: data.email,
-            reply_to_name: data.name,
-            subject: `[${requestTypeLabel}] ${data.name}`,
-            html: `
-              <h2>${escapeHtml(requestTypeLabel)}</h2>
-              <p><strong>Name:</strong> ${escapeHtml(data.name)}</p>
-              <p><strong>Email:</strong> ${escapeHtml(data.email)}</p>
-              <p><strong>Company:</strong> ${escapeHtml(data.company || 'Not provided')}</p>
-              <p><strong>Role:</strong> ${escapeHtml(data.role || 'Not provided')}</p>
-              <p><strong>Message:</strong></p>
-              <p>${escapeHtml(data.message).replace(/\n/g, '<br>')}</p>
-            `
-          })
-        });
-
-        if (!emailResponse.ok) {
-          console.error('SMTP Relay error:', await emailResponse.text());
-        }
-      } catch (emailError) {
-        console.error('Email error:', emailError);
+        const leadId = await createOdooLead(data, env);
+        console.log('Odoo lead created:', leadId);
+      } catch (odooError) {
+        console.error('Odoo error:', odooError.message);
+        // Don't fail the request - webhook can still capture the lead
       }
 
-      // Example: Store in Cloudflare D1 database (requires D1 database binding)
+      // Store in Cloudflare D1 database (if configured)
       if (env.DB) {
         try {
           await env.DB.prepare(
-            `INSERT INTO contact_submissions (name, email, company, role, message, submitted_at) 
-             VALUES (?, ?, ?, ?, ?, ?)`
+            `INSERT INTO contact_submissions (name, email, company, role, request_type, message, submitted_at)
+             VALUES (?, ?, ?, ?, ?, ?, ?)`
           ).bind(
             data.name,
             data.email,
-            data.company,
+            data.company || '',
             data.role || '',
+            data.request_type,
             data.message,
             new Date().toISOString()
           ).run();
         } catch (dbError) {
           console.error('Database error:', dbError);
-          // Don't fail the request if DB write fails
         }
       }
 
-      // Example: Send to webhook (Slack, Discord, etc.)
+      // Send to webhook (Slack, Discord, etc.) as backup notification
       if (env.WEBHOOK_URL) {
         try {
-          const webhookRequestType = getRequestTypeLabel(data.request_type);
+          const requestTypeLabel = getRequestTypeLabel(data.request_type);
           await fetch(env.WEBHOOK_URL, {
             method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-              text: `New ${webhookRequestType} from ${data.name} (${data.email}) at ${data.company || 'N/A'}`,
+              text: `New ${requestTypeLabel} from ${data.name} (${data.email}) at ${data.company || 'N/A'}`,
               attachments: [{
                 color: 'good',
                 fields: [
-                  { title: 'Request Type', value: webhookRequestType, short: true },
+                  { title: 'Request Type', value: requestTypeLabel, short: true },
                   { title: 'Name', value: data.name, short: true },
                   { title: 'Email', value: data.email, short: true },
                   { title: 'Company', value: data.company || 'Not provided', short: true },
@@ -212,55 +120,109 @@ export default {
           });
         } catch (webhookError) {
           console.error('Webhook error:', webhookError);
-          // Don't fail the request if webhook fails
         }
       }
 
       // Return success response
-      return new Response(
-        JSON.stringify({ success: true, message: 'Form submitted successfully' }), 
-        {
-          status: 200,
-          headers: {
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'POST, OPTIONS',
-            'Access-Control-Allow-Headers': 'Content-Type',
-          },
-        }
-      );
+      return jsonResponse({ success: true, message: 'Form submitted successfully' }, 200);
 
     } catch (error) {
       console.error('Worker error:', error);
-      return new Response(
-        JSON.stringify({ error: 'Internal server error' }), 
-        { 
-          status: 500,
-          headers: {
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'POST, OPTIONS',
-            'Access-Control-Allow-Headers': 'Content-Type',
-          },
-        }
-      );
+      return jsonResponse({ error: 'Internal server error' }, 500);
     }
   }
 };
 
-// Helper function to escape HTML
-function escapeHtml(text) {
-  const map = {
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;',
-    "'": '&#039;'
-  };
-  return text.replace(/[&<>"']/g, m => map[m]);
+// ============================================================
+// Odoo API Functions
+// ============================================================
+
+/**
+ * Authenticate with Odoo and get user ID
+ */
+async function authenticateOdoo(env) {
+  const response = await fetch(`${env.ODOO_URL}/jsonrpc`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      jsonrpc: '2.0',
+      method: 'call',
+      params: {
+        service: 'common',
+        method: 'authenticate',
+        args: [env.ODOO_DATABASE, env.ODOO_API_USER, env.ODOO_API_PASSWORD, {}]
+      },
+      id: 1
+    })
+  });
+
+  const result = await response.json();
+
+  if (result.error) {
+    throw new Error(`Odoo auth error: ${result.error.message || JSON.stringify(result.error)}`);
+  }
+
+  if (!result.result) {
+    throw new Error('Odoo authentication failed - invalid credentials');
+  }
+
+  return result.result; // Returns user ID
 }
 
-// Helper function to get readable request type label
+/**
+ * Create a lead in Odoo CRM
+ */
+async function createOdooLead(data, env) {
+  const uid = await authenticateOdoo(env);
+
+  const requestTypeLabel = getRequestTypeLabel(data.request_type);
+
+  const response = await fetch(`${env.ODOO_URL}/jsonrpc`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      jsonrpc: '2.0',
+      method: 'call',
+      params: {
+        service: 'object',
+        method: 'execute_kw',
+        args: [
+          env.ODOO_DATABASE,
+          uid,
+          env.ODOO_API_PASSWORD,
+          'crm.lead',
+          'create',
+          [{
+            name: `[${requestTypeLabel}] ${data.name}`,
+            contact_name: data.name,
+            email_from: data.email,
+            partner_name: data.company || '',
+            function: data.role || '',
+            description: data.message,
+            type: 'lead'
+          }]
+        ]
+      },
+      id: Date.now()
+    })
+  });
+
+  const result = await response.json();
+
+  if (result.error) {
+    throw new Error(`Odoo create error: ${result.error.message || JSON.stringify(result.error)}`);
+  }
+
+  return result.result; // Returns new lead ID
+}
+
+// ============================================================
+// Helper Functions
+// ============================================================
+
+/**
+ * Get readable request type label
+ */
 function getRequestTypeLabel(type) {
   const labels = {
     'demo': 'Demo/POC Request',
@@ -268,4 +230,29 @@ function getRequestTypeLabel(type) {
     'general': 'General Inquiry'
   };
   return labels[type] || type;
+}
+
+/**
+ * CORS headers for all responses
+ */
+function corsHeaders() {
+  return {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Max-Age': '86400',
+  };
+}
+
+/**
+ * Create JSON response with CORS headers
+ */
+function jsonResponse(data, status = 200) {
+  return new Response(JSON.stringify(data), {
+    status,
+    headers: {
+      'Content-Type': 'application/json',
+      ...corsHeaders(),
+    },
+  });
 }
