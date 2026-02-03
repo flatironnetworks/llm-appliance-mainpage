@@ -1,7 +1,7 @@
 # Cloudflare Worker Configuration for LLM Appliance Contact Form
 #
 # IMPORTANT: Run from this directory only!
-#   cd worker
+#   cd contact-form-worker
 #   wrangler deploy
 #
 # This deploys to: https://form-handler.flatironnetworks.workers.dev
@@ -10,8 +10,7 @@ name = "form-handler"
 main = "worker.js"
 compatibility_date = "2024-01-01"
 no_bundle = false
-
-# account_id is intentionally omitted - wrangler will prompt for account selection
+account_id = "5608819ce330b4d826a6441c6e0ae001"
 
 [vars]
 # Non-sensitive environment variables only
