@@ -16,7 +16,7 @@ account_id = "5608819ce330b4d826a6441c6e0ae001"
 # Non-sensitive environment variables only
 # These are safe to commit to version control
 NOTIFICATION_EMAIL = "contact@llmappliance.com"
-FROM_EMAIL = "noreply@llmappliance.com"
+FROM_EMAIL = "contact@llmappliance.com"
 SMTP_RELAY_URL = "https://smtp-relay.llmappliance.net/send"
 
 # ============================================================
