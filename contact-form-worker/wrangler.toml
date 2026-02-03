@@ -1,0 +1,48 @@
+# Cloudflare Worker Configuration for LLM Appliance Contact Form
+#
+# IMPORTANT: Run from this directory only!
+#   cd worker
+#   wrangler deploy
+#
+# This deploys to: https://form-handler.flatironnetworks.workers.dev
+
+name = "form-handler"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+no_bundle = false
+
+# account_id is intentionally omitted - wrangler will prompt for account selection
+
+[vars]
+# Non-sensitive environment variables only
+# These are safe to commit to version control
+NOTIFICATION_EMAIL = "contact@llmappliance.com"
+FROM_EMAIL = "noreply@llmappliance.com"
+SMTP_RELAY_URL = "https://smtp-relay.llmappliance.net/send"
+
+# ============================================================
+# SECRETS - Stored securely in Cloudflare (not in this file!)
+# ============================================================
+# The following secrets must be configured using wrangler CLI:
+#
+#   cd worker
+#   wrangler secret put TURNSTILE_SECRET_KEY
+#   wrangler secret put CF_ACCESS_CLIENT_ID
+#   wrangler secret put CF_ACCESS_CLIENT_SECRET
+#   wrangler secret put RELAY_API_SECRET
+#   wrangler secret put WEBHOOK_URL  (optional, for Slack/Discord)
+#
+# CF_ACCESS_CLIENT_ID and CF_ACCESS_CLIENT_SECRET are from
+# Cloudflare Zero Trust > Access > Service Auth > Create Service Token
+#
+# RELAY_API_SECRET should match the API_SECRET configured on the relay
+#
+# Each command will prompt for the secret value interactively.
+# Values are encrypted and stored in Cloudflare's secret storage.
+# ============================================================
+
+# D1 Database binding (optional, if using database storage)
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "llm-appliance-contacts"
+# database_id = "your-database-id"

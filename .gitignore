@@ -28,9 +28,10 @@ build/
 .wrangler/
 wrangler.toml.local
 .wrangler.toml
-*.log
-worker.js
-worker/
+contact-form-worker/.wrangler/
+
+# Claude Code temp files
+tmpclaude-*
 
 # Cloudflare configuration (keep this for Pages)
 # wrangler.toml is needed for Pages deployment
