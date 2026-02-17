@@ -1,0 +1,23 @@
+[Unit]
+Description=SMTP Relay for LLM Appliance Contact Form
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/mail-relay
+Environment="SMTP_HOST=mail.flatironnetworks.com"
+Environment="SMTP_PORT=587"
+Environment="SMTP_USE_TLS=true"
+Environment="SMTP_USER="
+Environment="SMTP_PASS="
+Environment="DEFAULT_TO=contact@llmappliance.com"
+Environment="DEFAULT_FROM=noreply@llmappliance.com"
+Environment="API_SECRET=CHANGE_THIS_TO_A_SECURE_SECRET"
+ExecStart=/opt/mail-relay/venv/bin/gunicorn --bind 127.0.0.1:5000 --workers 2 app:app
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
