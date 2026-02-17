@@ -347,24 +347,31 @@
             margin-bottom: 2rem;
         }
 
-        .steps-list {
+        .next-steps-list {
             text-align: left;
-            margin-bottom: 2rem;
-            max-width: 450px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto 2rem;
+            max-width: 550px;
+            list-style: none;
+            counter-reset: steps;
+            padding: 0;
         }
 
-        .step-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
+        .next-steps-list li {
+            counter-increment: steps;
+            margin-bottom: 1.25rem;
+            padding-left: 2.5rem;
+            position: relative;
+            color: var(--text-secondary);
+            line-height: 1.6;
         }
 
-        .step-number {
-            width: 2rem;
-            height: 2rem;
+        .next-steps-list li::before {
+            content: counter(steps);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1.75rem;
+            height: 1.75rem;
             background: var(--gradient-primary);
             color: white;
             border-radius: 50%;
@@ -372,16 +379,7 @@
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            flex-shrink: 0;
-        }
-
-        .step-item h4 {
-            margin-bottom: 0.25rem;
-        }
-
-        .step-item p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         @media (max-width: 768px) {
@@ -808,29 +806,11 @@
         <div class="container">
             <div class="next-steps-content">
                 <h2>Next Steps</h2>
-                <div class="steps-list">
-                    <div class="step-item">
-                        <div class="step-number">1</div>
-                        <div>
-                            <h4>Technical Demo</h4>
-                            <p>See the management console, REST API, and user management in action</p>
-                        </div>
-                    </div>
-                    <div class="step-item">
-                        <div class="step-number">2</div>
-                        <div>
-                            <h4>2-Week POC</h4>
-                            <p>Test with your team's actual models and workflows</p>
-                        </div>
-                    </div>
-                    <div class="step-item">
-                        <div class="step-number">3</div>
-                        <div>
-                            <h4>Deploy</h4>
-                            <p>Production-ready in under an hour</p>
-                        </div>
-                    </div>
-                </div>
+                <ol class="next-steps-list">
+                    <li><strong>Technical Demo</strong> — See the management console, REST API, and user management in action</li>
+                    <li><strong>2-Week POC</strong> — Test with your team's actual models and workflows</li>
+                    <li><strong>Deploy</strong> — Production-ready in under an hour</li>
+                </ol>
                 <a href="/contact.html" class="btn btn-primary btn-large">Contact Us</a>
             </div>
         </div>
