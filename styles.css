@@ -857,6 +857,7 @@ body {
     background: var(--gradient-primary);
     position: relative;
     display: none;
+    margin-top: 40px;
 }
 
 .step-connector::after {
