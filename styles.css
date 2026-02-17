@@ -808,7 +808,7 @@ body {
 
 .steps-container {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     flex-wrap: wrap;
     gap: 2rem;
