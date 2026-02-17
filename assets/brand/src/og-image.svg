@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0f1e"/>
+      <stop offset="50%" style="stop-color:#0d1528"/>
+      <stop offset="100%" style="stop-color:#111d35"/>
+    </linearGradient>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a8fe0"/>
+      <stop offset="100%" style="stop-color:#157DC8"/>
+    </linearGradient>
+    <linearGradient id="accentLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#157DC8"/>
+      <stop offset="100%" style="stop-color:#1a8fe0;stop-opacity:0"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="35%" cy="50%" r="40%">
+      <stop offset="0%" style="stop-color:#157DC8;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#157DC8;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Dark background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+
+  <!-- Subtle glow behind logo area -->
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- Grid pattern (subtle) -->
+  <g opacity="0.04" stroke="#ffffff" stroke-width="0.5">
+    <line x1="0" y1="0" x2="0" y2="630"/><line x1="60" y1="0" x2="60" y2="630"/>
+    <line x1="120" y1="0" x2="120" y2="630"/><line x1="180" y1="0" x2="180" y2="630"/>
+    <line x1="240" y1="0" x2="240" y2="630"/><line x1="300" y1="0" x2="300" y2="630"/>
+    <line x1="360" y1="0" x2="360" y2="630"/><line x1="420" y1="0" x2="420" y2="630"/>
+    <line x1="480" y1="0" x2="480" y2="630"/><line x1="540" y1="0" x2="540" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/><line x1="660" y1="0" x2="660" y2="630"/>
+    <line x1="720" y1="0" x2="720" y2="630"/><line x1="780" y1="0" x2="780" y2="630"/>
+    <line x1="840" y1="0" x2="840" y2="630"/><line x1="900" y1="0" x2="900" y2="630"/>
+    <line x1="960" y1="0" x2="960" y2="630"/><line x1="1020" y1="0" x2="1020" y2="630"/>
+    <line x1="1080" y1="0" x2="1080" y2="630"/><line x1="1140" y1="0" x2="1140" y2="630"/>
+    <line x1="0" y1="60" x2="1200" y2="60"/><line x1="0" y1="120" x2="1200" y2="120"/>
+    <line x1="0" y1="180" x2="1200" y2="180"/><line x1="0" y1="240" x2="1200" y2="240"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/><line x1="0" y1="360" x2="1200" y2="360"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/><line x1="0" y1="480" x2="1200" y2="480"/>
+    <line x1="0" y1="540" x2="1200" y2="540"/>
+  </g>
+
+  <!-- Accent line at top -->
+  <rect x="0" y="0" width="1200" height="3" fill="url(#accentLine)"/>
+
+  <!-- Shield icon (large, left-center area) -->
+  <g transform="translate(100, 175)">
+    <path d="M120 0 L225 50 V150 C225 210 175 250 120 265 C65 250 15 210 15 150 V50 Z"
+          fill="url(#shieldGrad)" opacity="0.95"/>
+    <!-- Server lines -->
+    <rect x="55" y="75" width="130" height="16" rx="4" fill="rgba(255,255,255,0.9)"/>
+    <rect x="55" y="105" width="130" height="16" rx="4" fill="rgba(255,255,255,0.7)"/>
+    <rect x="55" y="135" width="130" height="16" rx="4" fill="rgba(255,255,255,0.5)"/>
+    <!-- Activity dots -->
+    <circle cx="170" cy="83" r="4" fill="#0a0f1e"/>
+    <circle cx="170" cy="113" r="4" fill="#0a0f1e"/>
+    <circle cx="170" cy="143" r="4" fill="#0a0f1e"/>
+  </g>
+
+  <!-- Text content (right side) -->
+  <text x="480" y="240" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif"
+        font-size="64" font-weight="700" fill="#ffffff" letter-spacing="-1">
+    LLM Appliance
+  </text>
+
+  <!-- Accent divider -->
+  <rect x="480" y="260" width="80" height="3" rx="1.5" fill="#157DC8"/>
+
+  <!-- Tagline -->
+  <text x="480" y="310" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif"
+        font-size="28" font-weight="400" fill="#94a3b8" letter-spacing="0.5">
+    Self-Hosted LLM with Zero Data Retention
+  </text>
+
+  <!-- Subtitle / keywords -->
+  <g transform="translate(480, 360)">
+    <!-- Pill badges -->
+    <rect x="0" y="0" width="160" height="36" rx="18" fill="rgba(21,125,200,0.15)" stroke="#157DC8" stroke-width="1" stroke-opacity="0.4"/>
+    <text x="80" y="23" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif"
+          font-size="14" font-weight="500" fill="#60a5fa" text-anchor="middle" letter-spacing="0.5">Data Sovereignty</text>
+
+    <rect x="175" y="0" width="130" height="36" rx="18" fill="rgba(21,125,200,0.15)" stroke="#157DC8" stroke-width="1" stroke-opacity="0.4"/>
+    <text x="240" y="23" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif"
+          font-size="14" font-weight="500" fill="#60a5fa" text-anchor="middle" letter-spacing="0.5">On-Premise</text>
+
+    <rect x="320" y="0" width="160" height="36" rx="18" fill="rgba(21,125,200,0.15)" stroke="#157DC8" stroke-width="1" stroke-opacity="0.4"/>
+    <text x="400" y="23" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif"
+          font-size="14" font-weight="500" fill="#60a5fa" text-anchor="middle" letter-spacing="0.5">HIPAA Compliant</text>
+  </g>
+
+  <!-- Bottom bar with company name -->
+  <rect x="0" y="570" width="1200" height="60" fill="rgba(0,0,0,0.3)"/>
+  <text x="100" y="607" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif"
+        font-size="16" font-weight="400" fill="#64748b" letter-spacing="0.5">
+    by Flatiron Networks
+  </text>
+  <text x="1100" y="607" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif"
+        font-size="16" font-weight="400" fill="#64748b" text-anchor="end" letter-spacing="0.5">
+    llmappliance.com
+  </text>
+</svg>

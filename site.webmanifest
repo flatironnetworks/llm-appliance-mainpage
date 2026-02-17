@@ -1,0 +1,21 @@
+{
+  "name": "LLM Appliance",
+  "short_name": "LLM Appliance",
+  "description": "Self-Hosted LLM with Zero Data Retention",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#0a0f1e",
+  "theme_color": "#157DC8",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
