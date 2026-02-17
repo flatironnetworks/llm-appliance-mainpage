@@ -231,6 +231,14 @@ if (contactForm) {
             });
 
             if (response.ok) {
+                // Push conversion event to GTM dataLayer
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    'event': 'contact_form_submission',
+                    'form_request_type': formData.request_type,
+                    'form_company': formData.company || ''
+                });
+
                 // Show success message
                 contactForm.style.display = 'none';
                 formSuccess.style.display = 'block';
